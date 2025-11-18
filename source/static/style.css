@@ -29,7 +29,9 @@
 
 /* ===== STYLE DE BASE ===== */
 body {
-  font-feature-settings: "kern" 1, "liga" 1;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1;
   text-rendering: optimizeLegibility;
   line-height: 1.6;
   color: var(--text-color);
@@ -37,8 +39,12 @@ body {
 
 /* ===== NAVBAR ===== */
 .navbar {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
-  box-shadow: 0 2px 8px rgba(0,42,75,0.08);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  box-shadow: 0 2px 8px rgba(0, 42, 75, 0.08);
 }
 .navbar .navbar-item,
 .navbar .navbar-link {
@@ -47,7 +53,11 @@ body {
   transition: background 0.2s;
 }
 .navbar .navbar-dropdown {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
 }
 .navbar .navbar-dropdown .navbar-item {
   color: var(--color-accent-light) !important;
@@ -68,7 +78,11 @@ body {
 }
 
 .footer {
-  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
   color: var(--color-accent-light);
   margin-top: 3rem;
   padding-top: 2rem;
@@ -85,7 +99,11 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero.is-info {
-  background: linear-gradient(135deg, var(--primary-color), var(--color-accent-light));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--color-accent-light)
+  );
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -94,19 +112,21 @@ body {
   display: block;
   margin: 0 auto 2rem auto;
   max-width: 160px;
-  filter: drop-shadow(0 2px 8px rgba(0,42,75,0.15));
+  filter: drop-shadow(0 2px 8px rgba(0, 42, 75, 0.15));
 }
 .hero.is-info .title,
 .hero.is-info .subtitle {
   color: #fff;
-  text-shadow: 0 2px 8px rgba(0,42,75,0.10);
+  text-shadow: 0 2px 8px rgba(0, 42, 75, 0.1);
 }
 
 .card {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   border: 1px solid var(--color-primary-light);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 .card:hover {
   transform: translateY(-4px) scale(1.03);
@@ -197,9 +217,11 @@ table tbody tr:hover {
   background: #e3f2fd;
   transition: background 0.2s;
 }
-table th:first-child, table td:first-child {
+table th:first-child,
+table td:first-child {
   border-top-left-radius: 1.2rem;
 }
-table th:last-child, table td:last-child {
+table th:last-child,
+table td:last-child {
   border-top-right-radius: 1.2rem;
 }

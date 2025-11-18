@@ -16,17 +16,17 @@
 
 ## Phase 2 : Pages & Collections
 
-- [X] T007 Créer la page d’accueil source/content/\_index.md
-- [X] T008 Créer la page actualités source/content/actualites/index.md
-- [X] T009 Créer la page adhésions source/content/adhesions/index.md
-- [X] T010 Créer la page horaires source/content/horaires/index.md
-- [X] T011 Créer la page staff source/content/staff/index.md
-- [X] T012 Créer la page sponsors source/content/sponsors/index.md
-- [X] T013 Créer le template actualités source/templates/actualites.html -> Supprimé, n'est finalement pas pertinent
-- [X] T014 Créer le template adhésions source/templates/adhesions.html -> Supprimé, n'est finalement pas pertinent
-- [X] T015 Créer le template horaires source/templates/horaires.html -> Supprimé, n'est finalement pas pertinent
-- [X] T016 Créer le template staff source/templates/staff.html -> Supprimé, n'est finalement pas pertinent
-- [X] T017 Créer le template sponsors source/templates/sponsors.html -> Supprimé, n'est finalement pas pertinent
+- [x] T007 Créer la page d’accueil source/content/\_index.md
+- [x] T008 Créer la page actualités source/content/actualites/index.md
+- [x] T009 Créer la page adhésions source/content/adhesions/index.md
+- [x] T010 Créer la page horaires source/content/horaires/index.md
+- [x] T011 Créer la page staff source/content/staff/index.md
+- [x] T012 Créer la page sponsors source/content/sponsors/index.md
+- [x] T013 Créer le template actualités source/templates/actualites.html -> Supprimé, n'est finalement pas pertinent
+- [x] T014 Créer le template adhésions source/templates/adhesions.html -> Supprimé, n'est finalement pas pertinent
+- [x] T015 Créer le template horaires source/templates/horaires.html -> Supprimé, n'est finalement pas pertinent
+- [x] T016 Créer le template staff source/templates/staff.html -> Supprimé, n'est finalement pas pertinent
+- [x] T017 Créer le template sponsors source/templates/sponsors.html -> Supprimé, n'est finalement pas pertinent
 - [ ] T018 Configurer DecapCMS (source/static/admin/config.yml) avec une collection pour chaque page modifiable
 
 ## Phase 3 : Interactivité & Responsive
