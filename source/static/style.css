@@ -77,6 +77,56 @@ body {
   height: 2.5rem;
 }
 
+/* Navbar mobile - fond et texte lisibles */
+@media (max-width: 1024px) {
+  .navbar-menu.is-active {
+    background: #fff;
+  }
+  .navbar-menu.is-active .navbar-item,
+  .navbar-menu.is-active .navbar-link {
+    color: #222 !important;
+  }
+  .navbar-menu.is-active .navbar-dropdown {
+    background: #fff;
+  }
+  .navbar-menu.is-active .navbar-dropdown .navbar-item {
+    color: #222 !important;
+  }
+  .navbar-menu.is-active .navbar-dropdown .navbar-item:hover {
+    background: var(--color-accent-light);
+    color: var(--color-primary-dark) !important;
+  }
+}
+
+/* Navbar desktop - fond dégradé partout */
+@media (min-width: 1025px) {
+  .navbar-menu {
+    background: linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-primary-dark)
+    );
+  }
+  .navbar-menu .navbar-item,
+  .navbar-menu .navbar-link {
+    color: #fff !important;
+  }
+  .navbar-menu .navbar-dropdown {
+    background: linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-primary-dark)
+    );
+  }
+  .navbar-menu .navbar-dropdown .navbar-item {
+    color: var(--color-accent-light) !important;
+  }
+  .navbar-menu .navbar-dropdown .navbar-item:hover {
+    background: var(--color-accent-light);
+    color: var(--color-primary-dark) !important;
+  }
+}
+
 .footer {
   background: linear-gradient(
     90deg,
@@ -158,6 +208,26 @@ body {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* Footer badge Dev'Oc responsive - fix */
+.footer {
+  position: relative;
+}
+.footer .devoc-badges {
+  position: absolute;
+  right: 2rem;
+  bottom: 4rem;
+  text-align: right;
+  z-index: 2;
+}
+@media (max-width: 600px) {
+  .footer .devoc-badges {
+    position: static;
+    display: block;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+  }
 }
 
 /* ===== RESPONSIVE ===== */
