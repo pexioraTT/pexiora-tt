@@ -1,0 +1,127 @@
+name: 🔄 Mise à jour Template
+
+on:
+  schedule:
+    # Exécuter chaque lundi à 9h00 UTC
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update-template:
+    name: 🔄 Vérifier les mises à jour du template
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout du code
+        uses: actions/checkout@v4
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: 🐍 Configuration Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: 📦 Installation de cruft
+        run: pip install cruft
+
+      - name: 🔍 Vérification des mises à jour disponibles
+        id: check
+        run: |
+          if cruft check; then
+            echo "up_to_date=true" >> $GITHUB_OUTPUT
+            echo "✅ Template à jour"
+          else
+            echo "up_to_date=false" >> $GITHUB_OUTPUT
+            echo "🔄 Mises à jour disponibles"
+          fi
+
+      - name: 🔄 Mise à jour du template
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          # Configurer git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # Créer une branche pour les mises à jour
+          git checkout -b template-update-$(date +%Y%m%d)
+
+          # Appliquer les mises à jour
+          cruft update --skip-apply-ask || true
+
+          # Vérifier s'il y a des changements
+          if git diff --quiet; then
+            echo "Aucun changement après la mise à jour"
+            exit 0
+          fi
+
+          # Commiter les changements
+          git add .
+          git commit -m "🔄 Mise à jour automatique du template
+
+          - Mise à jour via cruft
+          - Exécutée automatiquement par GitHub Actions
+          - Date: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+
+          # Pousser la branche
+          git push origin template-update-$(date +%Y%m%d)
+
+      - name: 📝 Créer une Pull Request
+        if: steps.check.outputs.up_to_date == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { repo, owner } = context.repo;
+            const branchName = `template-update-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}`;
+
+            try {
+              const result = await github.rest.pulls.create({
+                title: '🔄 Mise à jour automatique du template',
+                owner,
+                repo,
+                head: branchName,
+                base: 'main',
+                body: `## 🔄 Mise à jour automatique du template
+
+                Cette PR contient les mises à jour automatiques du template Zola.
+
+                ### ⚠️ Actions requises
+                - [ ] Vérifier les changements
+                - [ ] Tester localement si nécessaire
+                - [ ] Merger si tout est OK
+
+                ### 📋 Détails
+                - **Source**: Template Zola mis à jour
+                - **Outil**: cruft
+                - **Date**: ${new Date().toISOString()}
+                - **Automatique**: Oui
+
+                ### 🔍 Vérifications
+                - Les workflows CI passeront automatiquement
+                - Vérifiez que le site se build correctement
+                - Testez les nouvelles fonctionnalités si applicable
+
+                ---
+                *Cette PR a été créée automatiquement par GitHub Actions*`
+              });
+
+              console.log('Pull Request créée:', result.data.html_url);
+            } catch (error) {
+              console.log('Erreur lors de la création de la PR:', error.message);
+            }
+
+      - name: 📊 Rapport
+        run: |
+          echo "## 🔄 Rapport de mise à jour du template" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check.outputs.up_to_date }}" == "true" ]; then
+            echo "✅ **Template à jour** - Aucune action requise" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "🔄 **Mise à jour disponible** - PR créée automatiquement" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Actions suivantes" >> $GITHUB_STEP_SUMMARY
+            echo "1. Vérifier la PR créée" >> $GITHUB_STEP_SUMMARY
+            echo "2. Tester les changements" >> $GITHUB_STEP_SUMMARY
+            echo "3. Merger si tout est OK" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date de vérification**: $(date -u)" >> $GITHUB_STEP_SUMMARY

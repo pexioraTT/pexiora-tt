@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: . # Mettez votre nom de dépôt ici
+  branch: main
+  use_graphql: true
+  auth_endpoint: auth
+  commit_messages:
+    create: "feat: ajout d'un nouvelle article {{collection}} “{{slug}}”"
+    update: "feat: mise à jour de {{collection}} “{{slug}}”"
+    delete: "feat: suppression de {{collection}} “{{slug}}”"
+    uploadMedia: "feat: ajout de média “{{path}}”"
+    deleteMedia: "feat: suppression de média “{{path}}”"
+    openAuthoring: "{{message}}"
+
+# Configuration des médias
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+# Localisation
+locale: "fr"
+
+# Collections
+collections:
+  # Pages statiques
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Page d'accueil"
+        name: "index"
+        file: "content/_index.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "text",
+              required: true,
+            }
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "index.html",
+            }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }

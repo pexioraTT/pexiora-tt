@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title | default(value=config.title) }}{% endblock title %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
+
+{% block content %}
+<div class="columns">
+    <div class="column is-8 is-offset-2">
+        <div class="content">
+            {{ page.content | safe }}
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language | default(value="fr") }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <meta name="author" content="{{ config.author }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
+    <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock og_title %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ current_url | default(value=config.base_url) }}">
+    <meta property="twitter:title" content="{% block twitter_title %}{{ config.title }}{% endblock twitter_title %}">
+    <meta property="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock twitter_description %}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ get_url(path="favicon.svg") }}">
+    <link rel="icon" type="image/png" href="{{ get_url(path="favicon.png") }}">
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+    <!-- Navbar simple avec Bulma -->
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation" x-data="{ isActive: false }">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-weight-bold" href="{{ get_url(path="/") }}">
+                    {{ config.title }}
+                </a>
+
+                <a role="button"
+                   class="navbar-burger"
+                   :class="{ 'is-active': isActive }"
+                   @click="isActive = !isActive"
+                   aria-label="menu"
+                   aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div class="navbar-menu" :class="{ 'is-active': isActive }">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="{{ get_url(path="/") }}">Accueil</a>
+                    <a class="navbar-item" href="{{ get_url(path="/contact/") }}">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="section">
+        <div class="container">
+            {% block content %}{% endblock content %}
+        </div>
+    </main>
+
+    <!-- Footer simple -->
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}. Tous droits réservés.</p>
+                <p>
+                    <a href="/mentions-legales/">Mentions légales</a> •
+                    <a href="/politique-de-confidentialite/">Politique de confidentialité</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock extra_js %}
+</body>
+</html>

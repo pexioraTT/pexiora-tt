@@ -1,0 +1,21 @@
+# Configuration Netlify pour Pexiora TT
+
+[build]
+command = "zola build --base-url $URL"
+publish = "public"
+
+[build.environment]
+ZOLA_VERSION = "0.21.0"
+NODE_VERSION = "22"
+
+# Bloc pour le développement local
+[dev]
+command = "zola serve"
+targetPort = 1111      # Le port de Zola
+# port = 8888 # Le port que Netlify ouvrira (par défaut 8888)
+
+# Redirections et réécritures
+[[redirects]]
+from = "/admin/*"
+to = "/admin/index.html"
+status = 200

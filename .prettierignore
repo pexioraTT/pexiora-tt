@@ -1,0 +1,11 @@
+# Ignore artifacts:
+source/public/
+node_modules/
+.netlify/
+
+# Ignore all generated files:
+*.min.css
+*.min.js
+
+# Ignore templates that might have conflicting syntax
+source/templates/*.html

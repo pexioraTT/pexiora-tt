@@ -1,0 +1,15 @@
+{
+  "name": "Pexiora TT",
+  "short_name": "pexiora-tt",
+  "description": "Site web du club de tennis de table de Pexiora",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

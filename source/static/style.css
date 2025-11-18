@@ -1,0 +1,109 @@
+/* Styles personnalisés - Facile à configurer après génération */
+
+/* ===== VARIABLES CSS - Modifiez ces valeurs pour personnaliser ===== */
+/* Palette principale Pexiora TT */
+:root {
+  --color-primary: #002a4b;
+  --color-primary-light: #14507a;
+  --color-primary-dark: #001a2f;
+  --color-accent: #e8b400;
+  --color-accent-light: #ffe066;
+  --color-accent-dark: #b38f00;
+  --color-bg: #f5f8fa;
+  --color-text: #222;
+  --border-radius: 6px;
+  --box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1);
+}
+
+/* Alias pour compatibilité Bulma et styles existants */
+:root {
+  --primary-color: var(--color-primary);
+  --primary-light: var(--color-primary-light);
+  --text-color: var(--color-text);
+  --background-color: var(--color-bg);
+}
+/* ===== STYLE DE BASE ===== */
+body {
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* ===== NAVBAR ===== */
+.navbar-brand .navbar-item {
+  font-weight: 600;
+}
+
+.navbar-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== HERO SECTION ===== */
+.hero.is-info {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-light)
+  );
+}
+
+/* ===== FORMULAIRES ===== */
+.input:focus,
+.textarea:focus,
+.select select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.125em rgba(32, 156, 238, 0.25);
+}
+
+.button.is-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.button.is-primary:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+/* ===== CONTENU ===== */
+.box {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.content {
+  color: var(--text-color);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: var(--background-color);
+  margin-top: 3rem;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  .hero-body {
+    padding: 3rem 1.5rem;
+  }
+
+  .title.is-1 {
+    font-size: 2.5rem !important;
+  }
+
+  .subtitle.is-4 {
+    font-size: 1.25rem !important;
+  }
+}

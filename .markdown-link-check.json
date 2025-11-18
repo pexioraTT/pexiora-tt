@@ -1,0 +1,26 @@
+{
+  "alive-status-codes": [200, 206, 429],
+  "check-modified-files-only": false,
+  "ignore-patterns": [
+    {
+      "pattern": "^https://example\\.com"
+    },
+    {
+      "pattern": "^https://localhost"
+    },
+    {
+      "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "^https://127\\.0\\.0\\.1"
+    },
+    {
+      "pattern": "^mailto:"
+    }
+  ],
+  "timeout": "20s",
+  "retry-on-429": true,
+  "retry-count": 3,
+  "fallback-retry-delay": "30s",
+  "aliveStatusCodes": [200, 206, 429]
+}
