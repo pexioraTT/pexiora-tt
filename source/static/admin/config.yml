@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: . # Mettez votre nom de dépôt ici
+  repo: cdubos-fr/pexiora-tt
   branch: main
   use_graphql: true
   auth_endpoint: auth
