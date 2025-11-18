@@ -21,7 +21,6 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ get_url(path="favicon.svg") }}">
-    <link rel="icon" type="image/png" href="{{ get_url(path="favicon.png") }}">
 
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -40,6 +39,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item has-text-weight-bold" href="{{ get_url(path="/") }}">
+                    <img src="{{ get_url(path="logo.png") }}" alt="Logo Pexiora TT" style="height:2.2rem; margin-right:0.5rem;">
                     {{ config.title }}
                 </a>
 
@@ -58,7 +58,17 @@
             <div class="navbar-menu" :class="{ 'is-active': isActive }">
                 <div class="navbar-end">
                     <a class="navbar-item" href="{{ get_url(path="/") }}">Accueil</a>
-                    <a class="navbar-item" href="{{ get_url(path="/contact/") }}">Contact</a>
+                    <a class="navbar-item" href="{{ get_url(path="/actualites/") }}">Actualités</a>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" href="{{ get_url(path="/le-club/") }}">Le Club</a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" href="{{ get_url(path="/le-club/horaires") }}">Horaires &amp; Entraînements</a>
+                                <a class="navbar-item" href="{{ get_url(path="/le-club/adhesions") }}">Adhésions</a>
+                                <a class="navbar-item" href="{{ get_url(path="/le-club/staff") }}">Le Staff</a>
+                            </div>
+                        </div>
+                        <a class="navbar-item" href="{{ get_url(path="/sponsors") }}">Sponsors</a>
+                        <a class="navbar-item" href="{{ get_url(path="/contact") }}">Contact</a>
                 </div>
             </div>
         </div>
@@ -72,7 +82,7 @@
     </main>
 
     <!-- Footer simple -->
-    <footer class="footer">
+    <footer class="footer has-text-centered" style="position: relative;">
         <div class="container">
             <div class="content has-text-centered">
                 <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}. Tous droits réservés.</p>
@@ -81,6 +91,9 @@
                     <a href="/politique-de-confidentialite/">Politique de confidentialité</a>
                 </p>
             </div>
+        </div>
+        <div style="position: absolute; right: 1rem; bottom: 4rem; text-align: right;">
+            {% include "devoc-embed.html" %}
         </div>
     </footer>
 

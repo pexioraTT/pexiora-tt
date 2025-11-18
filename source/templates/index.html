@@ -5,18 +5,92 @@
 <section class="hero is-info">
     <div class="hero-body">
         <div class="container has-text-centered">
+            <img src="{{ get_url(path='logo.png') }}" alt="Logo Pexiora TT" class="logo-hero">
             <h1 class="title is-1">Bienvenue</h1>
             <h2 class="subtitle is-4">{{ config.description }}</h2>
         </div>
     </div>
 </section>
 
-<!-- Contenu principal -->
-<div class="columns">
-    <div class="column is-8 is-offset-2">
-        <div class="content">
-            {{ section.content | safe }}
+<!-- Dernières actualités -->
+<section class="section">
+    <div class="container">
+        <h2 class="title is-3 has-text-primary">Dernières actualités</h2>
+        {% set actualites = get_section(path="actualites/_index.md") %}
+        {% if actualites.pages | length > 0 %}
+            {% set last_news = actualites.pages | sort(attribute="date", reverse=true) | slice(end=3) %}
+            <div class="columns is-multiline">
+                {% for actu in last_news %}
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-content">
+                                <h3 class="title is-5">{{ actu.title }}</h3>
+                                <p>{{ actu.description | safe }}</p>
+                                {% if actu.date %}
+                                    <p class="is-size-7 has-text-grey"><time datetime="{{ actu.date }}">{{ actu.date | date(format="%d %B %Y") }}</time></p>
+                                {% endif %}
+                                <a href="{{ actu.permalink }}" class="button is-link is-small">Lire la suite</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="notification is-info">Aucune actualité pour le moment.</div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Informations pratiques dynamiques -->
+<section class="section">
+    <div class="columns">
+        {% set horaires = get_page(path="le-club/horaires.md") %}
+        <div class="column is-half">
+            <div class="box">
+                <h2 class="title is-3 has-text-primary">{{ horaires.title }}</h2>
+                <div class="content is-6">
+                    {{ horaires.content | safe }}
+                </div>
+            </div>
+        </div>
+        {% set contact = get_page(path="contact.md") %}
+        <div class="column is-half">
+            <div class="box">
+                <h2 class="title is-3 has-text-primary">{{ contact.title }}</h2>
+                <div class="content content is-6">
+                    {{ contact.content | safe }}
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<!-- Sponsors -->
+<section class="section">
+    {% set sponsors = get_section(path="sponsors/_index.md") %}
+    <div class="box has-text-centered">
+        <h2 class="title is-4 has-text-primary">{{ sponsors.title }}</h2>
+        <div class="content">
+            <ul style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; list-style: none; padding: 0; margin: 2rem 0;">
+                {% for sponsor in sponsors.pages %}
+                    <li style="background: var(--color-accent-light); color: var(--color-primary-dark); border-radius: 2rem; padding: 0.75rem 2rem; font-weight: 600; box-shadow: 0 2px 8px rgba(232,180,0,0.08); white-space: nowrap; display: flex; align-items: center; gap: 1rem;">
+                        {% if sponsor.extra.site %}
+                            <a href="{{ sponsor.extra.site }}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 1rem;">
+                        {% else %}
+                            <span style="display: flex; align-items: center; gap: 1rem;">
+                        {% endif %}
+                            {% if sponsor.extra.image %}
+                                <img src="{{ get_url(path=sponsor.extra.image) }}" alt="Logo {{ sponsor.title }}" style="height: 2.5rem; width: auto; border-radius: 0.5rem; background: #fff; box-shadow: 0 1px 4px #0001;">
+                            {% endif %}
+                            <span>{{ sponsor.title }}</span>
+                        {% if sponsor.extra.site %}
+                            </a>
+                        {% else %}
+                            </span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
 {% endblock content %}

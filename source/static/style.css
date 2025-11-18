@@ -4,8 +4,8 @@
 /* Palette principale Pexiora TT */
 :root {
   --color-primary: #002a4b;
-  --color-primary-light: #14507a;
-  --color-primary-dark: #001a2f;
+  --color-primary-light: #63a4ff;
+  --color-primary-dark: #004ba0;
   --color-accent: #e8b400;
   --color-accent-light: #ffe066;
   --color-accent-dark: #b38f00;
@@ -22,60 +22,107 @@
   --text-color: var(--color-text);
   --background-color: var(--color-bg);
 }
+
+.has-text-primary {
+  color: var(--color-primary) !important;
+}
+
 /* ===== STYLE DE BASE ===== */
 body {
-  font-feature-settings:
-    "kern" 1,
-    "liga" 1;
+  font-feature-settings: "kern" 1, "liga" 1;
   text-rendering: optimizeLegibility;
   line-height: 1.6;
   color: var(--text-color);
 }
 
 /* ===== NAVBAR ===== */
-.navbar-brand .navbar-item {
+.navbar {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  box-shadow: 0 2px 8px rgba(0,42,75,0.08);
+}
+.navbar .navbar-item,
+.navbar .navbar-link {
+  color: #fff !important;
   font-weight: 600;
+  transition: background 0.2s;
+}
+.navbar .navbar-dropdown {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+}
+.navbar .navbar-dropdown .navbar-item {
+  color: var(--color-accent-light) !important;
+  font-weight: 500;
+}
+.navbar .navbar-dropdown .navbar-item:hover {
+  background: var(--color-accent-light);
+  color: var(--color-primary-dark) !important;
+}
+.navbar .navbar-item:hover,
+.navbar .navbar-link:hover {
+  background: var(--color-accent);
+  color: var(--color-primary) !important;
+}
+.navbar .navbar-brand .navbar-item img {
+  margin-right: 0.5rem;
+  height: 2.5rem;
 }
 
-.navbar-item:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+.footer {
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  color: var(--color-accent-light);
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer a:hover {
+  text-decoration: underline;
+  color: var(--color-accent);
 }
 
 /* ===== HERO SECTION ===== */
 .hero.is-info {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--primary-light)
-  );
+  background: linear-gradient(135deg, var(--primary-color), var(--color-accent-light));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.logo-hero {
+  display: block;
+  margin: 0 auto 2rem auto;
+  max-width: 160px;
+  filter: drop-shadow(0 2px 8px rgba(0,42,75,0.15));
+}
+.hero.is-info .title,
+.hero.is-info .subtitle {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,42,75,0.10);
 }
 
-/* ===== FORMULAIRES ===== */
-.input:focus,
-.textarea:focus,
-.select select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.125em rgba(32, 156, 238, 0.25);
+.card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-primary-light);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.button.is-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 1.5em 2em -0.5em var(--color-primary-light);
 }
-
-.button.is-primary:hover {
-  background-color: var(--primary-light);
-  border-color: var(--primary-light);
+.notification.is-info {
+  background: var(--color-accent-light);
+  color: var(--color-primary-dark);
+  border-left: 4px solid var(--color-accent);
+  box-shadow: 0 0.5em 1em -0.125em var(--color-accent);
 }
 
 /* ===== CONTENU ===== */
 .box {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-}
-
-.content {
-  color: var(--text-color);
 }
 
 /* ===== FOOTER ===== */
@@ -85,7 +132,7 @@ body {
 }
 
 .footer a {
-  color: var(--primary-color);
+  color: var(--background-color);
   text-decoration: none;
 }
 
@@ -106,4 +153,53 @@ body {
   .subtitle.is-4 {
     font-size: 1.25rem !important;
   }
+}
+
+.has-text-primary {
+  color: var(--color-primary) !important;
+}
+
+/* Table staff - style moderne */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px #002a4b22;
+  overflow: hidden;
+}
+table th {
+  background: var(--color-accent-light, #1976d2);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 0.5rem;
+  font-size: 1.1rem;
+  border: none;
+}
+table td {
+  padding: 1rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: #fafbfc;
+}
+table tr:last-child td {
+  border-bottom: none;
+}
+table img {
+  max-width: 90px;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #0001;
+}
+table tbody tr:hover {
+  background: #e3f2fd;
+  transition: background 0.2s;
+}
+table th:first-child, table td:first-child {
+  border-top-left-radius: 1.2rem;
+}
+table th:last-child, table td:last-child {
+  border-top-right-radius: 1.2rem;
 }
