@@ -1,10 +1,8 @@
 +++
 title = "Grande fête du club : une journée inoubliable !"
 description = "Retour sur la fête annuelle du club avec animations, matchs, ateliers et surprises."
+template = "page.html"
 date = 2025-11-20
-tags = ["fête", "club", "animations"]
-categories = ["événement"]
-draft = false
 +++
 
 La fête annuelle du club s’est déroulée samedi dernier dans une ambiance festive et familiale. Petits et grands ont pu profiter d’une journée riche en animations !
