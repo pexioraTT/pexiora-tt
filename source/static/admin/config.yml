@@ -13,7 +13,7 @@ backend:
     openAuthoring: "{{message}}"
 
 # Configuration des médias
-media_folder: "static/images/uploads"
+media_folder: "source/static/images/uploads"
 public_folder: "/images/uploads"
 
 # Localisation
@@ -27,6 +27,9 @@ collections:
     folder: "source/content/actualites"
     create: true
     slug: "{{year}}{{month}}{{day}}-{{slug}}"
+    filter:
+      field: template
+      value: page.html
     fields:
       - { label: "Titre", name: "title", widget: "string", required: true }
       - { label: "Date", name: "date", widget: "datetime", required: true }
@@ -112,6 +115,9 @@ collections:
     folder: "source/content/sponsors"
     create: true
     slug: "{{slug}}"
+    filter:
+      field: template
+      value: page.html
     fields:
       - { label: "Nom", name: "title", widget: "string", required: true }
       - { label: "Description", name: "description", widget: "text" }

@@ -1,26 +1,47 @@
-// Prévisualisation personnalisée DecapCMS
-CMS.registerPreviewTemplate("pages", PagePreview);
+if (window.CMS) {
 
-// Ajout des styles Bulma et custom pour la prévisualisation
-CMS.registerPreviewStyle(
-  "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
-);
-CMS.registerPreviewStyle("/style.css");
+    const h = (window.h || (window.React && window.React.createElement));
 
-function PagePreview(props) {
-  const title = props.entry.getIn(["data", "title"]);
-  const description = props.entry.getIn(["data", "description"]);
-  const body = props.entry.getIn(["data", "body"]);
+    // Ajout des styles Bulma et custom pour la prévisualisation
+    CMS.registerPreviewStyle(
+        "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    );
+    CMS.registerPreviewStyle("/style.css");
 
-  return `
-        <div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: system-ui;">
-            <header style="margin-bottom: 2rem;">
-                <h1 style="color: #2563eb; margin-bottom: 0.5rem;">${title}</h1>
-                ${description ? `<p style="color: #6b7280; font-size: 1.1rem;">${description}</p>` : ""}
-            </header>
-            <div style="line-height: 1.6;">
-                ${body ? marked.parse(body) : ""}
-            </div>
-        </div>
-    `;
+    // Preview type "page" (pages et actualités)
+    const renderPageLikePreview = ({ entry, widgetFor }) => {
+        if (!h) return null;
+        const data = entry.get('data');
+        const title = data && data.get('title');
+        const description = data && data.get('description');
+
+        return h('div', { className: 'box', style: { maxWidth: '800px', margin: '0 auto', padding: '2rem' } },
+            h('header', { className: 'mb-5' },
+                title ? h('h1', { className: 'title is-2', style: { color: 'var(--color-primary)' } }, title) : null,
+                description ? h('p', { className: 'subtitle is-5', style: { color: 'var(--color-accent-light)' } }, description) : null
+            ),
+            h('div', { className: 'content', style: { lineHeight: '1.6' } }, widgetFor('body'))
+        );
+    };
+
+    CMS.registerPreviewTemplate('pages', renderPageLikePreview);
+    CMS.registerPreviewTemplate('actualites', renderPageLikePreview);
+
+    // Preview spécifique pour sponsors
+    CMS.registerPreviewTemplate('sponsors', ({ entry, widgetFor}) => {
+        const data = entry.get('data');
+        const title = data && data.get('title');
+        const description = data && data.get('description');
+        const extra = data && data.get('extra');
+        const logo = extra && extra.get('image');
+        const site = extra && extra.get('site');
+
+        return h('div', { className: 'box', style: { maxWidth: '600px', margin: '0 auto', padding: '2rem', textAlign: 'center' } },
+            logo ? h('img', { src: logo, alt: `Logo ${title || ''}`.trim(), style: { maxWidth: '160px', marginBottom: '1rem', borderRadius: '1rem', boxShadow: '0 2px 8px var(--color-primary-dark)' } }) : null,
+            title ? h('h2', { className: 'title is-3', style: { color: 'var(--color-primary)' } }, title) : null,
+            site ? h('p', {}, h('a', { href: site, target: '_blank', className: 'button is-link is-light', style: { marginBottom: '1rem' } }, 'Site web')) : null,
+            description ? h('p', { className: 'subtitle is-6', style: { color: 'var(--color-accent-light)' } }, description) : null,
+            h('div', { className: 'content', style: { lineHeight: '1.6', marginTop: '1rem' } }, widgetFor('body'))
+        );
+    });
 }
