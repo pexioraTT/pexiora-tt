@@ -8,6 +8,6 @@ template = "page.html"
 
 **Email :** [contact@example.com](mailto:contact@example.com)
 
-**Téléphone :** +33 1 23 45 67 89
+**Téléphone :** 06.00.00.00.00
 
-**Adresse :** 123 Rue Example, 75000 Paris
+**Adresse :** Salle Polyvalente, rue du Stade, 11150 Pexiora

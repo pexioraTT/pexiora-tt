@@ -3,9 +3,9 @@ CMS.registerPreviewTemplate("pages", PagePreview);
 
 // Ajout des styles Bulma et custom pour la prévisualisation
 CMS.registerPreviewStyle(
-  "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+  "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
 );
-CMS.registerPreviewStyle("/static/style.css");
+CMS.registerPreviewStyle("/style.css");
 
 function PagePreview(props) {
   const title = props.entry.getIn(["data", "title"]);

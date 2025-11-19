@@ -6,9 +6,16 @@ template = "page.html"
 
 ## Tarifs
 
-- Adulte : 80 € / an
-- Jeune (-18 ans) : 50 € / an
-- Étudiant : 60 € / an
+### Loisir
+
+- Adulte : 52 € / an
+- Jeune (-18 ans) : 52 € / an
+
+### Compétition
+
+- Adulte : 92 € / an
+- Jeune (-18 ans) : 92 € / an
+- Critérium : 40 €
 
 ## Modalités
 

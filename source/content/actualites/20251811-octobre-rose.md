@@ -5,4 +5,14 @@ template = "page.html"
 date = 2025-11-05
 +++
 
-Le club a organisé un tournoi pour le Téléthon, réunissant près de 50 participants dans une ambiance conviviale et solidaire.
+Le club s'est mobilisé pour Octobre Rose avec un tournoi solidaire.
+
+- 40 participants
+- Tombola au profit de la recherche
+- Stand d'information
+
+![Octobre Rose](/telethon.png)
+
+> "Merci à tous pour votre générosité et votre engagement !" — Sophie Bernard
+
+La soirée s'est terminée par un buffet convivial et la remise des prix aux gagnants.

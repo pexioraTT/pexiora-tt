@@ -19,32 +19,108 @@ public_folder: "/images/uploads"
 # Localisation
 locale: "fr"
 
-# Collections
+# Configuration des collections
 collections:
-  # Pages statiques
+  # Actualités
+  - name: "actualites"
+    label: "Actualités"
+    folder: "source/content/actualites"
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string", required: true }
+      - { label: "Date", name: "date", widget: "datetime", required: true }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Contenu", name: "body", widget: "markdown", required: true }
+      - { label: "Brouillon", name: "draft", widget: "boolean", default: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - {
+          label: "Catégories",
+          name: "categories",
+          widget: "list",
+          required: false,
+        }
+
+  # Pages modifiables
   - name: "pages"
     label: "Pages"
     files:
-      - label: "Page d'accueil"
-        name: "index"
-        file: "content/_index.md"
+      - label: "Adhésions"
+        name: "adhesions"
+        file: "source/content/le-club/adhesions.md"
         fields:
           - { label: "Titre", name: "title", widget: "string", required: true }
-          - {
-              label: "Description",
-              name: "description",
-              widget: "text",
-              required: true,
-            }
-          - {
-              label: "Template",
-              name: "template",
-              widget: "hidden",
-              default: "index.html",
-            }
+          - { label: "Description", name: "description", widget: "text" }
           - {
               label: "Contenu",
               name: "body",
               widget: "markdown",
               required: true,
             }
+      - label: "Horaires"
+        name: "horaires"
+        file: "source/content/le-club/horaires.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
+      - label: "Staff"
+        name: "staff"
+        file: "source/content/le-club/staff.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
+      - label: "Contact"
+        name: "contact"
+        file: "source/content/contact.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
+      - label: "Mentions légales"
+        name: "mentions-legales"
+        file: "source/content/mentions-legales.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
+
+  # Sponsors
+  - name: "sponsors"
+    label: "Sponsors"
+    folder: "source/content/sponsors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom", name: "title", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Logo", name: "extra.image", widget: "image", required: false }
+      - {
+          label: "Site web",
+          name: "extra.site",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Contenu", name: "body", widget: "markdown", required: true }
+      - { label: "Brouillon", name: "draft", widget: "boolean", default: false }

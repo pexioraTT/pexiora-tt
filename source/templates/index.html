@@ -18,7 +18,7 @@
         <h2 class="title is-3 has-text-primary">Dernières actualités</h2>
         {% set actualites = get_section(path="actualites/_index.md") %}
         {% if actualites.pages | length > 0 %}
-            {% set last_news = actualites.pages | sort(attribute="date", reverse=true) | slice(end=3) %}
+            {% set last_news = actualites.pages | slice(end=3) %}
             <div class="columns is-multiline">
                 {% for actu in last_news %}
                     <div class="column is-one-third">
