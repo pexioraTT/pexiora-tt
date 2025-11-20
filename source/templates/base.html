@@ -28,6 +28,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
 
+    {% block rss %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="feed.xml", trailing_slash=false) }}">
+    {% endblock %}
+
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -88,6 +92,11 @@
                 <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}. Tous droits réservés.</p>
                 <p>
                     <a href="/mentions-legales/">Mentions légales</a>
+                    &nbsp;·&nbsp;
+                    <a href="{{ get_url(path='feed.xml') }}" target="_blank" rel="alternate"
+                        title="S’abonner au flux RSS des actualités">
+                        S’abonner au flux RSS
+                    </a>
                 </p>
             </div>
         </div>
