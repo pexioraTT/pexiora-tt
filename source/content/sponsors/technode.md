@@ -4,5 +4,5 @@ description = "Vos chantiez toujours realisé"
 template = "page.html"
 draft = false
 [extra]
-image = "technode.png"
+image = "images/uploads/technode.png"
 +++

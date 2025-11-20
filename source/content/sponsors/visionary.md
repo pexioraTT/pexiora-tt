@@ -4,5 +4,5 @@ description = "Des lunettes de qualités"
 template = "page.html"
 draft = false
 [extra]
-image = "visionary.png"
+image = "images/uploads/visionary.png"
 +++

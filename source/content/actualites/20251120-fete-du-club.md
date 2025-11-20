@@ -19,7 +19,7 @@ La fête annuelle du club s’est déroulée samedi dernier dans une ambiance fe
 - Remise des trophées
 - Buffet convivial
 
-![Ambiance festive](/telethon.png)
+![Ambiance festive](/images/uploads/telethon.png)
 
 > "C’est toujours un plaisir de voir le club réuni autour du sport et de la convivialité !" — David Delpech
 
