@@ -9,95 +9,43 @@ Site web du club de tennis de table de Pexiora
 - **[Bulma](https://bulma.io/)** - Framework CSS moderne et responsive
 - **[DecapCMS](https://decapcms.org/)** - Interface d'administration pour la gestion de contenu
 - **[Netlify](https://www.netlify.com/)** - Plateforme de déploiement et d'hébergement
-- **[Husky](https://typicode.github.io/husky/)** - Hooks Git pour maintenir la qualité du code
+- **[Lefthook](https://github.com/evilmartians/lefthook)** - Hooks Git rapides et parallélisés
+- **[Bun](https://bun.sh/)** - Exécuteur rapide pour scripts et CLIs
 
 ## 📋 Prérequis
 
 - **[Zola](https://www.getzola.org/documentation/getting-started/installation/)**
-- **[Node.js](https://nodejs.org/)** via nvm
-- **[pnpm](https://pnpm.io/)** pour la gestion des paquets Node.js
+- **[pnpm](https://pnpm.io/)** pour la gestion des paquets
 - **[Just](https://github.com/casey/just)** pour l'automatisation des tâches
 - **[direnv](https://direnv.net/)** pour la gestion de l'environnement
+- **[Bun](https://bun.sh/)** pour exécuter rapidement les scripts (recommandé)
 
 ### 🔧 Installation rapide des outils
 
-#### macOS (avec Homebrew)
-
 ```bash
-brew install zola just direnv nvm
-# Installer pnpm avec corepack (inclus avec Node.js)
-corepack enable
-corepack prepare pnpm@latest --activate
-```
-
-#### Ubuntu/Debian
-
-```bash
-# Installer avec Homebrew (recommandé)
-brew install zola just direnv nvm pnpm
-
-# Après installation de nvm, installer Node.js et pnpm
-nvm install
-nvm use
-corepack enable
-corepack prepare pnpm@latest --activate
-```
-
-#### Configuration de nvm et Node.js
-
-```bash
-# Installer et utiliser Node.js
-nvm install
-nvm use
-nvm alias default
-
-# Activer pnpm
-corepack enable
-corepack prepare pnpm@latest --activate
-
-# Installer les dépendances du projet
-pnpm install
+brew install zola just direnv nvm pnpm bun
 ```
 
 ## 🚀 Démarrage rapide
 
-1. **Configurer Node.js avec nvm**
+### Configurer l'environnement avec direnv
 
-   ```bash
-   # Utiliser la version Node.js du projet
-   nvm use
+```bash
+# Autoriser direnv pour ce projet
+direnv allow
+```
 
-   # Si c'est la première fois, installer cette version
-   nvm install
-   ```
+### Démarrer le serveur de développement
 
-2. **Installer les dépendances**
+```bash
+# Avec Netlify Dev (recommandé - inclut les fonctions Netlify)
+just dev
+```
 
-   ```bash
-   # Installer les dépendances Node.js
-   pnpm install
-   ```
+### Ouvrir dans le navigateur
 
-3. **Configurer l'environnement avec direnv**
-
-   ```bash
-   # Autoriser direnv pour ce projet
-   direnv allow
-
-   # L'environnement se configure automatiquement
-   # Les outils manquants seront installés
-   ```
-
-4. **Démarrer le serveur de développement**
-
-   ```bash
-   # Avec Netlify Dev (recommandé - inclut les fonctions Netlify)
-   just dev
-   ```
-
-5. **Ouvrir dans le navigateur**
-   - Site : <http://localhost:1111>
-   - Admin CMS : <http://localhost:1111/admin>
+- Site : <http://localhost:1111>
+- Admin CMS : <http://localhost:1111/admin>
 
 ## 📝 Gestion de contenu
 
@@ -128,7 +76,8 @@ just build            # Construire le site pour production
 just check            # Vérifier la configuration Zola
 
 # 🔍 Qualité
-just lint             # Vérifications qualité (Prettier, Markdownlint)
+just lint             # Vérifications (lint)
+just format           # Correcteur (format)
 just test             # Tests BATS automatisés
 
 # 🔧 Maintenance
@@ -162,31 +111,31 @@ Voir toutes les commandes : `just --list`
 
 ### 🔍 Qualité du code
 
-Ce projet utilise **Husky** pour maintenir la qualité du code :
+Ce projet utilise **Lefthook** pour maintenir la qualité du code au commit.
+Les commandes suivantes sont mise a disposition pour controlé la qualité également :
 
 ```bash
-# Installer les hooks git (automatique avec pnpm install)
-pnpm run prepare
+# Installer les hooks git (automatique via script prepare)
+bun run prepare
 
 # Lancer les vérifications manuellement
-pnpm run lint
+bun run lint
 
 # Corriger automatiquement les problèmes de formatage
-pnpm run lint:fix
+bun run format  # Validation contenu (optionnel)
 
 # Commit avec Commitizen (messages standardisés)
-pnpm run commit
+bun run commit
 ```
 
 **Hooks automatiques :**
 
-- **Pre-commit** : Vérifie le formatage (Prettier) et la syntaxe Markdown
-- **Commit-msg** : Valide le format des messages de commit (Commitlint)
+- **lint** : Lint
+- **Commit-messages** : Valide le format des messages de commit
 
 **Outils de qualité :**
 
-- **Prettier** : Formatage du code (CSS, HTML, JS, Markdown)
-- **Markdownlint** : Vérification de la syntaxe Markdown
+- **Prettier** : Lint + format (JS/TS/JSON/CSS/HTML/Markdown)
 - **Commitizen** : Messages de commit standardisés (Conventional Commits)
 - **Commitlint** : Validation des messages de commit
 - **BATS** : Tests automatisés de l'infrastructure
@@ -195,26 +144,15 @@ pnpm run commit
 
 ### 🌐 Netlify (recommandé)
 
-1. **Configuration automatique** (si vous avez utilisé le bouton "Deploy to Netlify")
-   - Le site se déploie automatiquement à chaque push
-   - Preview automatique sur les Pull Requests
-
-2. **Configuration manuelle**
-
-   ```bash
-   # Connecter le projet à Netlify
-   netlify init
-
-   # Déployer
-   just deploy
-   ```
+- **Configuration automatique** (si vous avez utilisé le bouton "Deploy to Netlify")
+  - Le site se déploie automatiquement à chaque push
+  - Preview automatique sur les Pull Requests
 
 ### ⚙️ Variables d'environnement Netlify
 
 Configurez dans l'interface Netlify :
 
 - `ZOLA_VERSION=0.21.0`
-- `NODE_VERSION=22`
 
 ## 🔒 Authentification CMS
 
@@ -231,19 +169,32 @@ Pour activer l'authentification :
 
 ```
 pexiora-tt/
-├── config.toml              # Configuration Zola
-├── content/                 # Contenu Markdown
-├── templates/               # Templates HTML
-├── static/                  # Fichiers statiques
-├── sass/                    # Styles Sass (optionnel)
-├── public/                  # Site généré (ignoré)
-├── justfile                 # Commandes d'automatisation
-├── .envrc                   # Configuration direnv
-├── .pre-commit-config.yaml  # Hooks pre-commit
-├── netlify.toml             # Configuration Netlify
+├── source/                  # Dossier source principal Zola
+│   ├── config.toml         # Configuration principale de Zola
+│   ├── netlify.toml        # Configuration Netlify (build, redirections)
+│   ├── content/            # Contenu du site (Markdown)
+│   │   └── _index.md      # Page d'accueil
+│   ├── templates/         # Templates Zola (HTML + Tera)
+│   │   ├── base.html     # Template de base avec Bulma
+│   │   ├── index.html    # Template d'accueil avec Alpine.js
+│   │   ├── page.html     # Template pour les pages
+│   │   ├── section.html  # Template pour les sections
+│   │   └── feed.xml      # Template RSS
+|   ├── public/           # Site généré par Zola (ignoré par git)
+│   └── static/           # Fichiers statiques
+│       ├── admin/        # Configuration DecapCMS
+│       │   ├── config.yml # Config CMS
+│       │   └── index.html # Interface admin
+│       ├── style.css     # CSS personnalisé avec variables Bulma
+│       └── favicon.svg   # Icônes et assets
+├── justfile              # Commandes d'automatisation (dev, build, lint)
+├── package.json          # Dépendances Js
+├── .envrc                # Configuration direnv (environnement automatique)
+├── .prettierrc.json         # Configuration Linter
+├── .prettierignore          # Configuration Linter
+├── tests/                # Tests BATS pour l'infrastructure
 └── .github/
-    ├── workflows/           # GitHub Actions
-    └── copilot-instructions.md # Instructions pour Copilot
+    └── workflows/        # GitHub Actions (CI/CD)
 ```
 
 ### 🧪 Tests et qualité
@@ -301,7 +252,7 @@ direnv status
 **Erreurs de déploiement Netlify**
 
 - Vérifier les logs dans l'interface Netlify
-- Tester le build localement : `just build-check`
+- Tester le build localement : `just build`
 
 ## 🤝 Contribution
 
@@ -330,7 +281,6 @@ Ce site a été créé à partir du template **Zola + Bulma + DecapCMS + Netlify
 - **[Cookiecutter](https://cookiecutter.readthedocs.io/)** pour la génération
 - **[Cruft](https://cruft.github.io/cruft/)** pour les mises à jour
 - **[Just](https://github.com/casey/just)** pour l'automatisation
-- **[uv](https://docs.astral.sh/uv/)** pour la gestion Python
 
 ### 📦 Créer un nouveau site avec ce template
 

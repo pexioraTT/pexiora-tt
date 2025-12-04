@@ -11,9 +11,9 @@ Ce projet est un site web statique construit avec **Zola**, un générateur de s
 - **Bulma** : Framework CSS moderne et responsive
 - **DecapCMS** : Interface d'administration pour la gestion de contenu
 - **Netlify** : Plateforme de déploiement et d'hébergement
-- **Husky** : Hooks Git pour maintenir la qualité du code
+- **Lefthook** : Hooks Git rapides et parallélisés
 - **Prettier** : Formatage automatique du code
-- **Markdownlint** : Validation de la syntaxe Markdown
+- **Bun** : Exécuteur rapide pour scripts et CLIs
 - **BATS** : Tests automatisés de l'infrastructure
 - **Commitizen** : Standardisation des messages de commit
 
@@ -40,9 +40,11 @@ pexiora-tt/
 │       └── favicon.svg   # Icônes et assets
 ├── public/               # Site généré par Zola (ignoré par git)
 ├── justfile              # Commandes d'automatisation (dev, build, lint)
-├── package.json          # Dépendances Node.js (Husky, Prettier, etc.)
+├── package.json          # Dépendances Js
 ├── .envrc                # Configuration direnv (environnement automatique)
-├── .husky/               # Hooks Git (remplace pre-commit)
+├── lefthook.yml          # Hooks Git
+├── .prettierrc.json         # Configuration Linter
+├── .prettierignore          # Configuration Linter
 ├── tests/                # Tests BATS pour l'infrastructure
 └── .github/
     └── workflows/        # GitHub Actions (CI/CD)
@@ -70,10 +72,10 @@ title = "Titre de la page"
 description = "Description pour le SEO"
 date = 2024-01-01
 draft = false
-[taxonomies]
-
-+++tags = ["tag1", "tag2"]
-categories = ["categorie"]
+[extra]
+image = "images/uploads/devoc.png"
+site = "https://www.dev-oc.fr/"
++++
 ```
 
 ### Alpine.js
@@ -96,33 +98,31 @@ Framework CSS moderne avec système de grille et composants :
 - Modifiers : `.is-large`, `.is-success`, `.is-outlined`
 - Variables CSS personnalisées dans `style.css` pour étendre Bulma
 
-### Qualité du code (Husky + NPM)
+### Qualité du code
 
-Hooks Git automatiques configurés :
+Hooks Git automatiques configurés grace a Lefthook.
 
-- **Pre-commit** : `npm run lint` (Prettier + Markdownlint)
-- **Scripts NPM** :
-  - `npm run lint` : Vérification complète
-  - `npm run lint:fix` : Correction automatique
-  - `npm run dev` : Netlify dev
-  - `npm run build` : Build Zola depuis source/
+Commande manuelle disponible :
+
+- `bun run lint` : Vérification complète
+- `bun run format` : Correction automatique
+- `bun run dev` : Netlify dev
+- `bun run build` : Build Zola depuis source/
 
 ## 📋 Commandes disponibles (Just)
 
 Utiliser `just` pour les tâches courantes :
 
-- `just dev` : Serveur de développement Zola
-- `just build` : Construction du site
-- `just check` : Vérifications Zola + linting
-- `just test` : Tests BATS automatisés
 - `just dev` : Serveur de développement avec Netlify Dev
 - `just build` : Construire le site pour production
 - `just check` : Vérifier la configuration Zola
-- `just lint` : Vérifications qualité (Prettier, Markdownlint)
+- `just lint` : Vérifications (lint)
+- `just format` : Correction automatique (format)
 - `just test` : Tests BATS automatisés
 - `just clean` : Nettoyage des builds
 - `just clean-all` : Nettoyage complet (inclut node_modules)
 - `just update-template` : Mise à jour du template avec cruft
+- `just check-updates` : Vérifier les mises à jour du template
 
 ## 🎯 Conventions de code
 
@@ -132,7 +132,6 @@ Utiliser `just` pour les tâches courantes :
 - Titre H1 uniquement dans le contenu, pas dans le front matter
 - Images dans `static/uploads/` ou `static/images/`
 - Alt text obligatoire pour les images
-- Respecter la validation Markdownlint
 
 ### Templates HTML
 
@@ -254,18 +253,6 @@ Optimisations intégrées :
 - Vérifier la configuration YAML
 - Contrôler l'authentification Netlify
 - Valider les permissions de fichiers
-
-## 🎯 Prochaines fonctionnalités suggérées
-
-- [ ] Système de commentaires (Disqus/Utterances)
-- [ ] Newsletter (Netlify Forms)
-- [ ] PWA complète avec Service Worker
-- [ ] Mode sombre/clair
-- [ ] Recherche full-text
-- [ ] Partage social
-- [ ] Galeries d'images
-- [ ] Système de votes/likes
-- [ ] Internationalisation (i18n)
 
 ---
 

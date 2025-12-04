@@ -4,13 +4,11 @@
   "description": "Site web du club de tennis de table de Pexiora",
   "private": true,
   "scripts": {
-    "dev": "netlify dev",
+    "dev": "bun run netlify dev",
     "build": "zola build",
-    "lint": "pnpm lint:prettier",
-    "lint:fix": "pnpm lint:prettier:fix",
-    "lint:prettier": "prettier --check \"**/*.{css,scss,sass,html,js,ts,json,md,toml,yaml}\"",
-    "lint:prettier:fix": "prettier --write \"**/*.{css,scss,sass,html,js,ts,json,md,toml,yaml}\"",
-    "prepare": "husky install",
+    "lint": "bun run prettier --check .",
+    "format": "bun run prettier --write .",
+    "prepare": "lefthook install",
     "commit": "cz"
   },
   "devDependencies": {
@@ -18,15 +16,13 @@
     "@commitlint/config-conventional": "^18.6.3",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.5.2",
-    "netlify-cli": "^17.38.1",
+    "lefthook": "^2.0.4",
     "prettier": "^3.6.2",
-    "prettier-plugin-toml": "^2.0.6"
+    "netlify-cli": "^17.38.1"
   },
   "packageManager": "pnpm@10.20.0",
   "engines": {
-    "node": ">=18",
+    "bun": ">=1.3",
     "pnpm": ">=8"
   },
   "config": {

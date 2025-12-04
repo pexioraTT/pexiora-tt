@@ -17,7 +17,7 @@ default:
 [working-directory: 'source']
 dev:
     @echo -e "{{GREEN}}🌐 Démarrage avec Netlify Dev...{{NC}}"
-    netlify dev
+    bun run netlify dev
 
 # 🔨 Construction
 # Construire le site pour la production
@@ -25,7 +25,6 @@ dev:
 build:
     @echo -e "{{BLUE}}🔨 Construction du site...{{NC}}"
     zola build
-
 
 # Verifier le site
 [working-directory: 'source']
@@ -38,8 +37,15 @@ check:
 # Vérifier la qualité du code
 lint:
     @echo -e "{{BLUE}} Exécution du Linter...{{NC}}"
-    npm run lint
+    bun run lint
     @echo -e "{{GREEN}}✅ Linting terminé avec succès{{NC}}"
+
+# Formatage
+# Corriger automatiquement le code
+format:
+    @echo -e "{{BLUE}} Exécution du formateur...{{NC}}"
+    bun run format
+    @echo -e "{{GREEN}}✅ Formatage terminé avec succès{{NC}}"
 
 # 🧪 Tests avec BATS
 # Exécuter tous les tests automatisés
@@ -79,4 +85,3 @@ check-updates:
     else \
         echo -e "{{RED}}❌ cruft non installé{{NC}}"; \
     fi
-

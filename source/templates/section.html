@@ -1,17 +1,7 @@
-{% extends "base.html" %}
-
-{% block title %}{{ section.title }} - {{ config.title }}{% endblock title %}
-
-{% block description %}
-  {% if section.description %}
-    {{ section.description }}
-  {% else %}
-    {{ config.description }}
-  {% endif %}
-{% endblock description %}
-
-
-{% block content %}
+{% extends "base.html" %} {% block title %}{{ section.title }} - {{ config.title
+}}{% endblock title %} {% block description %} {% if section.description %} {{
+section.description }} {% else %} {{ config.description }} {% endif %} {%
+endblock description %} {% block content %}
 <section class="section">
   <div class="container">
     <section class="hero is-info is-small mb-5">
@@ -19,51 +9,58 @@
         <div class="container has-text-centered">
           <h1 class="title is-2">{{ section.title }}</h1>
           {% if section.description %}
-            <p class="subtitle is-5">{{ section.description }}</p>
+          <p class="subtitle is-5">{{ section.description }}</p>
           {% endif %}
         </div>
       </div>
     </section>
     {% if section.content %}
-      <div class="content mt-4">
-        {{ section.content | safe }}
-      </div>
-    {% endif %}
-    {% if section.pages %}
-      <div class="columns is-multiline mt-5">
-        {% for page in section.pages %}
-          <div class="column is-half">
-            <a href="{{ page.permalink }}" class="card mb-4 card-link" style="display:block; text-decoration:none; color:inherit;">
-              <div class="card-content">
-                <h3 class="title is-4 has-text-primary">{{ page.title }}</h3>
-                {% if page.summary %}
-                  <p>{{ page.summary }}</p>
-                {% endif %}
-                {% if page.date %}
-                  <p class="is-size-7 has-text-grey"><time datetime="{{ page.date }}">{{ page.date | date(format="%d %B %Y") }}</time></p>
-                {% endif %}
-              </div>
-            </a>
+    <div class="content mt-4">{{ section.content | safe }}</div>
+    {% endif %} {% if section.pages %}
+    <div class="columns is-multiline mt-5">
+      {% for page in section.pages %}
+      <div class="column is-half">
+        <a
+          href="{{ page.permalink }}"
+          class="card mb-4 card-link"
+          style="display: block; text-decoration: none; color: inherit"
+        >
+          <div class="card-content">
+            <h3 class="title is-4 has-text-primary">{{ page.title }}</h3>
+            {% if page.summary %}
+            <p>{{ page.summary }}</p>
+            {% endif %} {% if page.date %}
+            <p class="is-size-7 has-text-grey">
+              <time datetime="{{ page.date }}"
+                >{{ page.date | date(format="%d %B %Y") }}</time
+              >
+            </p>
+            {% endif %}
           </div>
-        {% endfor %}
+        </a>
       </div>
-    {% endif %}
-    {% if section.subsections %}
-      <div class="columns is-multiline mt-5">
-        {% for subsection_path in section.subsections %}
-          {% set subsection = get_section(path=subsection_path) %}
-          <div class="column is-half">
-            <a href="{{ subsection.permalink }}" class="card mb-4 card-link" style="display:block; text-decoration:none; color:inherit;">
-              <div class="card-content">
-                <h3 class="title is-4 has-text-primary">{{ subsection.title }}</h3>
-                {% if subsection.description %}
-                  <p>{{ subsection.description }}</p>
-                {% endif %}
-              </div>
-            </a>
+      {% endfor %}
+    </div>
+    {% endif %} {% if section.subsections %}
+    <div class="columns is-multiline mt-5">
+      {% for subsection_path in section.subsections %} {% set subsection =
+      get_section(path=subsection_path) %}
+      <div class="column is-half">
+        <a
+          href="{{ subsection.permalink }}"
+          class="card mb-4 card-link"
+          style="display: block; text-decoration: none; color: inherit"
+        >
+          <div class="card-content">
+            <h3 class="title is-4 has-text-primary">{{ subsection.title }}</h3>
+            {% if subsection.description %}
+            <p>{{ subsection.description }}</p>
+            {% endif %}
           </div>
-        {% endfor %}
+        </a>
       </div>
+      {% endfor %}
+    </div>
     {% endif %}
   </div>
 </section>

@@ -15,8 +15,8 @@ template = "page.html"
 
 - Adulte : 92 € / an
 - Jeune (-18 ans) : 92 € / an
-- Critérium : 40 €
+- Critérium fédéral : 40 €
 
 ## Modalités
 
-Inscription sur place ou via le formulaire de contact.
+Inscription sur place ou via le formulaire de la [FFTT](https://carte.fftt.com/club/11110033).

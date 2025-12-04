@@ -6,7 +6,6 @@ publish = "public"
 
 [build.environment]
 ZOLA_VERSION = "0.21.0"
-NODE_VERSION = "22"
 
 # Bloc pour le développement local
 [dev]

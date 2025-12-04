@@ -19,21 +19,15 @@ importers:
       cz-conventional-changelog:
         specifier: ^3.3.0
         version: 3.3.0(@types/node@24.10.1)(typescript@5.9.3)
-      husky:
-        specifier: ^8.0.3
-        version: 8.0.3
-      lint-staged:
-        specifier: ^15.5.2
-        version: 15.5.2
+      lefthook:
+        specifier: ^2.0.4
+        version: 2.0.7
       netlify-cli:
         specifier: ^17.38.1
         version: 17.38.1(@types/node@24.10.1)(picomatch@4.0.3)
       prettier:
         specifier: ^3.6.2
-        version: 3.6.2
-      prettier-plugin-toml:
-        specifier: ^2.0.6
-        version: 2.0.6(prettier@3.6.2)
+        version: 3.7.4
 
 packages:
   "@babel/code-frame@7.27.1":
@@ -1653,18 +1647,6 @@ packages:
       }
     engines: { node: ">=14.16" }
 
-  "@taplo/core@0.2.0":
-    resolution:
-      {
-        integrity: sha512-r8bl54Zj1In3QLkiW/ex694bVzpPJ9EhwqT9xkcUVODnVUGirdB1JTsmiIv0o1uwqZiwhi8xNnTOQBRQCpizrQ==,
-      }
-
-  "@taplo/lib@0.5.0":
-    resolution:
-      {
-        integrity: sha512-+xIqpQXJco3T+VGaTTwmhxLa51qpkQxCjRwezjFZgr+l21ExlywJFcDfTrNmL6lG6tqb0h8GyJKO3UPGPtSCWg==,
-      }
-
   "@tokenizer/token@0.3.0":
     resolution:
       {
@@ -2882,13 +2864,6 @@ packages:
       }
     engines: { node: ">=14" }
 
-  commander@13.1.0:
-    resolution:
-      {
-        integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==,
-      }
-    engines: { node: ">=18" }
-
   commander@2.20.3:
     resolution:
       {
@@ -3287,18 +3262,6 @@ packages:
     resolution:
       {
         integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==,
-      }
-    engines: { node: ">=6.0" }
-    peerDependencies:
-      supports-color: "*"
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@4.4.3:
-    resolution:
-      {
-        integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==,
       }
     engines: { node: ">=6.0" }
     peerDependencies:
@@ -4798,14 +4761,6 @@ packages:
       }
     engines: { node: ">=16.17.0" }
 
-  husky@8.0.3:
-    resolution:
-      {
-        integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==,
-      }
-    engines: { node: ">=14" }
-    hasBin: true
-
   iconv-lite@0.4.24:
     resolution:
       {
@@ -5458,6 +5413,93 @@ packages:
       }
     engines: { node: ">= 0.6.3" }
 
+  lefthook-darwin-arm64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-C+LPGsbTobWElRlJy8IXS0bvjNuTAVGwtRD/Yx0Mki6+Qtn7cVWjzKemDzjK7/U1QTSF55YkWvY7JCsHvgtGww==,
+      }
+    cpu: [arm64]
+    os: [darwin]
+
+  lefthook-darwin-x64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-20Pi/FBft99rhQ6NjsrBeeqLDLAl5jit1HgxIE+G4IhOjFVKyfcNd9vyxLFTNTnm9OBI2ibkb8Ze7RbpjrJn+Q==,
+      }
+    cpu: [x64]
+    os: [darwin]
+
+  lefthook-freebsd-arm64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-EFYlh4T/ljpa03L0BkIyZJl3VTDTOi7rmJN3V5liaMhhmnJdLWqqnjNp1+nREFkH3O2STAZ4vUqQTFchEe6UOg==,
+      }
+    cpu: [arm64]
+    os: [freebsd]
+
+  lefthook-freebsd-x64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-vB5+s5Hmd8kJX8BYhhw1T17l3+lFTfL8HDmDBSxMK6oU+Q6I4nLDYfVAhlhpEA2C6XV73mEx9M+WamhYS3tOOA==,
+      }
+    cpu: [x64]
+    os: [freebsd]
+
+  lefthook-linux-arm64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-y+n6wyrSIBdc9itApW79AlcsqffNphP4YCvG+0KaTdArLZGPb3Qu5I+5EnrZHf5lOSF6hSdjgG8XXI5NlFETMg==,
+      }
+    cpu: [arm64]
+    os: [linux]
+
+  lefthook-linux-x64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-KohT2UdBHa55NvQ2z6siodcrUOslxkShF+Xlan+wsfJHy3t4KZF7LZcm5u7WOBX0C7+qAXRcx864ul5JaX8biQ==,
+      }
+    cpu: [x64]
+    os: [linux]
+
+  lefthook-openbsd-arm64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-1GzXb8/zlYa7cTLvKTJE60+4IbPMthWMnrUR8coxE5QxjUVZXeWMueeJzQhH/is7aaH8J81EQkbkM9OQiT5JPA==,
+      }
+    cpu: [arm64]
+    os: [openbsd]
+
+  lefthook-openbsd-x64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-pYQnVikjpTgyJZBta1Lkxegh0Ls3L5us3MYgpNO7zlVScOmXUNYnagBBqKKXw2bD9rRqcb4BGvNgoWkXmmKMYg==,
+      }
+    cpu: [x64]
+    os: [openbsd]
+
+  lefthook-windows-arm64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-DrgC+NVv3JbAPzwPebT/NtwfXlHlAtF3ak9AwKSWXWEYGQ78Wzv7JKLl3aNXeFVbJX0AxGmb9qcmImux88poSQ==,
+      }
+    cpu: [arm64]
+    os: [win32]
+
+  lefthook-windows-x64@2.0.7:
+    resolution:
+      {
+        integrity: sha512-y7vgTyTUgOnVuKMQVlNgY7Q/FaBqFwccRsQcGei9YfVR+2S/KF/pBMd6Tl2BnOA8mQDU4NjbR3M3z1tEE2Ex8Q==,
+      }
+    cpu: [x64]
+    os: [win32]
+
+  lefthook@2.0.7:
+    resolution:
+      {
+        integrity: sha512-B6ipwXZCDF5gD6QN2pdz9ImUB5ulNEBdO3jG8akKd0IO9QYiGgWu66sYcxEU1hci+vJCx2UWLQdLjzLNsfhqjA==,
+      }
+    hasBin: true
+
   leven@3.1.0:
     resolution:
       {
@@ -5471,26 +5513,11 @@ packages:
         integrity: sha512-aORPWntbpH5esaYpGOOmri0OHDOe3wC5M2MQxZ9dvMLZm6DnaAn0kJlcbU9hwsQgLzmZyReKwFwwPkR+nHu5kA==,
       }
 
-  lilconfig@3.1.3:
-    resolution:
-      {
-        integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==,
-      }
-    engines: { node: ">=14" }
-
   lines-and-columns@1.2.4:
     resolution:
       {
         integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==,
       }
-
-  lint-staged@15.5.2:
-    resolution:
-      {
-        integrity: sha512-YUSOLq9VeRNAo/CTaVmhGDKG+LBtA8KF1X4K5+ykMSwWST1vDxJRB2kv2COgLb1fvpCo+A/y9A0G0znNVmdx4w==,
-      }
-    engines: { node: ">=18.12.0" }
-    hasBin: true
 
   listhen@1.9.0:
     resolution:
@@ -5503,13 +5530,6 @@ packages:
     resolution:
       {
         integrity: sha512-iyAZCeyD+c1gPyE9qpFu8af0Y+MRtmKOncdGoA2S5EY8iFq99dmmvkNnHiWo+pj0s7yH7l3KPIgee77tKpXPWQ==,
-      }
-    engines: { node: ">=18.0.0" }
-
-  listr2@8.3.3:
-    resolution:
-      {
-        integrity: sha512-LWzX2KsqcB1wqQ4AHgYb4RsDXauQiqhjLk+6hjbaeHG4zpjjVAB6wC/gz6X0l+Du1cN3pUB5ZlrvTbhGSNnUQQ==,
       }
     engines: { node: ">=18.0.0" }
 
@@ -6872,14 +6892,6 @@ packages:
       }
     engines: { node: ">=12" }
 
-  pidtree@0.6.0:
-    resolution:
-      {
-        integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==,
-      }
-    engines: { node: ">=0.10" }
-    hasBin: true
-
   pino-abstract-transport@2.0.0:
     resolution:
       {
@@ -6951,19 +6963,10 @@ packages:
       }
     engines: { node: ">= 0.6" }
 
-  prettier-plugin-toml@2.0.6:
+  prettier@3.7.4:
     resolution:
       {
-        integrity: sha512-12N/wBuHa9jd/KVy9pRP20NMKxQfQLMseQCt66lIbLaPLItvGUcSIryE1eZZMJ7loSws6Ig3M2Elc2EreNh76w==,
-      }
-    engines: { node: ">=16.0.0" }
-    peerDependencies:
-      prettier: ^3.0.3
-
-  prettier@3.6.2:
-    resolution:
-      {
-        integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==,
+        integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==,
       }
     engines: { node: ">=14" }
     hasBin: true
@@ -7786,13 +7789,6 @@ packages:
       {
         integrity: sha512-kn+e44esVfn2Fa/O0CPFcex27fjIL6MkVae0Mm6q+E6f0hWv578YCERbv+4m02cjxvDsPKLnmxral/rR6lBMAg==,
       }
-
-  string-argv@0.3.2:
-    resolution:
-      {
-        integrity: sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==,
-      }
-    engines: { node: ">=0.6.19" }
 
   string-width@2.1.1:
     resolution:
@@ -9897,12 +9893,6 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  "@taplo/core@0.2.0": {}
-
-  "@taplo/lib@0.5.0":
-    dependencies:
-      "@taplo/core": 0.2.0
-
   "@tokenizer/token@0.3.0": {}
 
   "@trysound/sax@0.2.0": {}
@@ -10512,7 +10502,8 @@ snapshots:
 
   chalk@5.3.0: {}
 
-  chalk@5.6.2: {}
+  chalk@5.6.2:
+    optional: true
 
   chardet@0.7.0: {}
 
@@ -10651,8 +10642,6 @@ snapshots:
   colors@1.4.0: {}
 
   commander@10.0.1: {}
-
-  commander@13.1.0: {}
 
   commander@2.20.3: {}
 
@@ -10931,10 +10920,6 @@ snapshots:
       ms: 2.1.3
     optionalDependencies:
       supports-color: 9.4.0
-
-  debug@4.4.3:
-    dependencies:
-      ms: 2.1.3
 
   decache@4.6.2:
     dependencies:
@@ -11924,8 +11909,6 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  husky@8.0.3: {}
-
   iconv-lite@0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -12280,6 +12263,49 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
+  lefthook-darwin-arm64@2.0.7:
+    optional: true
+
+  lefthook-darwin-x64@2.0.7:
+    optional: true
+
+  lefthook-freebsd-arm64@2.0.7:
+    optional: true
+
+  lefthook-freebsd-x64@2.0.7:
+    optional: true
+
+  lefthook-linux-arm64@2.0.7:
+    optional: true
+
+  lefthook-linux-x64@2.0.7:
+    optional: true
+
+  lefthook-openbsd-arm64@2.0.7:
+    optional: true
+
+  lefthook-openbsd-x64@2.0.7:
+    optional: true
+
+  lefthook-windows-arm64@2.0.7:
+    optional: true
+
+  lefthook-windows-x64@2.0.7:
+    optional: true
+
+  lefthook@2.0.7:
+    optionalDependencies:
+      lefthook-darwin-arm64: 2.0.7
+      lefthook-darwin-x64: 2.0.7
+      lefthook-freebsd-arm64: 2.0.7
+      lefthook-freebsd-x64: 2.0.7
+      lefthook-linux-arm64: 2.0.7
+      lefthook-linux-x64: 2.0.7
+      lefthook-openbsd-arm64: 2.0.7
+      lefthook-openbsd-x64: 2.0.7
+      lefthook-windows-arm64: 2.0.7
+      lefthook-windows-x64: 2.0.7
+
   leven@3.1.0: {}
 
   light-my-request@5.14.0:
@@ -12288,24 +12314,7 @@ snapshots:
       process-warning: 3.0.0
       set-cookie-parser: 2.7.2
 
-  lilconfig@3.1.3: {}
-
   lines-and-columns@1.2.4: {}
-
-  lint-staged@15.5.2:
-    dependencies:
-      chalk: 5.6.2
-      commander: 13.1.0
-      debug: 4.4.3
-      execa: 8.0.1
-      lilconfig: 3.1.3
-      listr2: 8.3.3
-      micromatch: 4.0.8
-      pidtree: 0.6.0
-      string-argv: 0.3.2
-      yaml: 2.8.1
-    transitivePeerDependencies:
-      - supports-color
 
   listhen@1.9.0:
     dependencies:
@@ -12329,15 +12338,6 @@ snapshots:
       uqr: 0.1.2
 
   listr2@8.2.5:
-    dependencies:
-      cli-truncate: 4.0.0
-      colorette: 2.0.20
-      eventemitter3: 5.0.1
-      log-update: 6.1.0
-      rfdc: 1.4.1
-      wrap-ansi: 9.0.2
-
-  listr2@8.3.3:
     dependencies:
       cli-truncate: 4.0.0
       colorette: 2.0.20
@@ -13156,8 +13156,6 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  pidtree@0.6.0: {}
-
   pino-abstract-transport@2.0.0:
     dependencies:
       split2: 4.2.0
@@ -13235,12 +13233,7 @@ snapshots:
 
   precond@0.2.3: {}
 
-  prettier-plugin-toml@2.0.6(prettier@3.6.2):
-    dependencies:
-      "@taplo/lib": 0.5.0
-      prettier: 3.6.2
-
-  prettier@3.6.2: {}
+  prettier@3.7.4: {}
 
   pretty-format@27.5.1:
     dependencies:
@@ -13716,8 +13709,6 @@ snapshots:
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
-
-  string-argv@0.3.2: {}
 
   string-width@2.1.1:
     dependencies:

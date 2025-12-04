@@ -11,7 +11,7 @@ Le club s'est mobilisé pour Octobre Rose avec un tournoi solidaire.
 - Tombola au profit de la recherche
 - Stand d'information
 
-![Octobre Rose](/images/uploads/telethon.png)
+![Octobre Rose](/images/uploads/players.png)
 
 > "Merci à tous pour votre générosité et votre engagement !" — Sophie Bernard
 
