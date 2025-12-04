@@ -17,6 +17,9 @@ jobs:
       - name: 🔧 Setup Bun
         uses: oven-sh/setup-bun@v2
 
+      - name: 🔧 Installation de Just
+        uses: extractions/setup-just@v2
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
 
