@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/Dev-Oc-Collectif/zola-template",
-  "commit": "4965eec0694502ec696a8a4b25a0cf1cb216c259",
+  "commit": "d67a4e6a242783e66009980f16075ba5f6e93853",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -14,7 +14,7 @@
         "**/static/admin/config.yml"
       ],
       "_template": "https://github.com/Dev-Oc-Collectif/zola-template",
-      "_commit": "4965eec0694502ec696a8a4b25a0cf1cb216c259"
+      "_commit": "d67a4e6a242783e66009980f16075ba5f6e93853"
     }
   },
   "directory": null
