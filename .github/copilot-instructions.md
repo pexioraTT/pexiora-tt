@@ -71,7 +71,6 @@ Les fichiers Markdown utilisent le front matter TOML :
 title = "Titre de la page"
 description = "Description pour le SEO"
 date = 2024-01-01
-draft = false
 [extra]
 image = "images/uploads/devoc.png"
 site = "https://www.dev-oc.fr/"

@@ -13,6 +13,8 @@ if (window.CMS) {
     const data = entry.get("data");
     const title = data && data.get("title");
     const description = data && data.get("description");
+    const extraImage = data && data.get("extra.image");
+    const extraImageDescription = data && data.get("extra.image_description");
 
     return h(
       "div",
@@ -47,6 +49,13 @@ if (window.CMS) {
       h(
         "div",
         { className: "content", style: { lineHeight: "1.6" } },
+        extraImage
+          ? h("img", {
+              alt: extraImageDescription || "",
+              src: `/${extraImage}`,
+              style: { maxWidth: "100%", marginBottom: "1rem" },
+            })
+          : null,
         widgetFor("body")
       )
     );
@@ -77,7 +86,7 @@ if (window.CMS) {
       },
       logo
         ? h("img", {
-            src: `static/${logo}`,
+            src: `/${logo}`,
             alt: `Logo ${title || ""}`.trim(),
             style: {
               maxWidth: "160px",

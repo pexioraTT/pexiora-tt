@@ -2,7 +2,6 @@
 title = "Mentions légales"
 description = "Informations légales du site Pexiora TT."
 template = "page.html"
-draft = false
 +++
 
 **Éditeur du site** :

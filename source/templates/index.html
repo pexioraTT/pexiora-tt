@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{% block title %}{{ section.title | default(value=config.title) }}{% endblock title %}
+{% block description %}{{ section.description | default(value=config.description) }}{% endblock description%}
+
+{% block og_title %}{{ section.title | default(value=config.title) }}{% endblock og_title %}
+{% block og_description %}{{ section.description | default(value=config.description) }}{% endblock og_description %}
+{% block og_url %}{{ get_url(path=section.path) }}{% endblock og_url %}
+
+{% block twitter_title %}{{ section.title | default(value=config.title) }}{% endblock twitter_title %}
+{% block twitter_description %}{{ section.description | default(value=config.description) }}{% endblock twitter_description %}
+{% block twitter_url %}{{ get_url(path=section.path) }}{% endblock twitter_url %}
 {% block content %}
 <!-- Hero section minimaliste -->
 <section class="hero is-info">
@@ -54,13 +64,20 @@
             </div>
         </div>
         {% set contact = get_page(path="contact.md") %}
+        {% set adhesions = get_page(path="le-club/adhesions.md") %}
         <div class="column is-half">
             <div class="box">
-                <h2 class="title is-3 has-text-primary">{{ contact.title }}</h2>
+                <h2 class="title is-3 has-text-primary">{{ adhesions.title }}</h2>
                 <div class="content content is-6">
-                    {{ contact.content | safe }}
+                    {{ adhesions.content | safe }}
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="box">
+        <h2 class="title is-3 has-text-primary">{{ contact.title }}</h2>
+        <div class="content content is-6">
+            {{ contact.content | safe }}
         </div>
     </div>
 </section>

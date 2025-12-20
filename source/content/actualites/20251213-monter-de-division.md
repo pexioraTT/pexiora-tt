@@ -3,9 +3,9 @@ title = "Incroyable résultat / Phase 1 - 2025/2026 !"
 description = "Lors de Phase 1 de la saison 2025/2026, l'ensemble des équipes ont réussi la monter"
 template = "page.html"
 date = 2025-12-13
+extra.image = "/images/uploads/victoire-ping.png"
+extra.image_description = "Victoire"
 +++
-
-![Victoire](/images/uploads/victoire-ping.png)
 
 Le club réalise une très belle performance sur cette prémière phase de saison, avec une monter de division de toute ses équipes
 présente actuellement en competition !

@@ -1,7 +1,17 @@
-{% extends "base.html" %} {% block title %}{{ section.title }} - {{ config.title
-}}{% endblock title %} {% block description %} {% if section.description %} {{
-section.description }} {% else %} {{ config.description }} {% endif %} {%
-endblock description %} {% block content %}
+{% extends "base.html" %}
+
+{% block title %}{{ section.title | default(value=config.title) }}{% endblock title %}
+{% block description %}{{ section.description | default(value=config.description) }}{% endblock description%}
+
+{% block og_title %}{{ section.title | default(value=config.title) }}{% endblock og_title %}
+{% block og_description %}{{ section.description | default(value=config.description) }}{% endblock og_description %}
+{% block og_url %}{{ get_url(path=section.path) }}{% endblock og_url %}
+
+{% block twitter_title %}{{ section.title | default(value=config.title) }}{% endblock twitter_title %}
+{% block twitter_description %}{{ section.description | default(value=config.description) }}{% endblock twitter_description %}
+{% block twitter_url %}{{ get_url(path=section.path) }}{% endblock twitter_url %}
+
+{% block content %}
 <section class="section">
   <div class="container">
     <section class="hero is-info is-small mb-5">

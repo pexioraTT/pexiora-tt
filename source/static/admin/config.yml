@@ -32,17 +32,21 @@ collections:
       value: page.html
     fields:
       - { label: "Titre", name: "title", widget: "string", required: true }
-      - { label: "Date", name: "date", widget: "datetime", required: true }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Contenu", name: "body", widget: "markdown", required: true }
-      - { label: "Brouillon", name: "draft", widget: "boolean", default: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Date", name: "date", widget: "datetime", required: true }
       - {
-          label: "Catégories",
-          name: "categories",
-          widget: "list",
+          label: "Image",
+          name: "extra.image",
+          widget: "image",
           required: false,
         }
+      - {
+          label: "Description de l'image",
+          name: "extra.image_description",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Contenu", name: "body", widget: "markdown", required: true }
 
   # Pages modifiables
   - name: "pages"
@@ -141,4 +145,3 @@ collections:
           required: false,
         }
       - { label: "Contenu", name: "body", widget: "markdown", required: true }
-      - { label: "Brouillon", name: "draft", widget: "boolean", default: false }
