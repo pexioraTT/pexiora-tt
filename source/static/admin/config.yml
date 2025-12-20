@@ -147,4 +147,4 @@ collections:
               widget: "string",
               required: false,
             }
-      - { label: "Contenu", name: "body", widget: "markdown", required: true }
+      - { label: "Contenu", name: "body", widget: "markdown", required: false }
