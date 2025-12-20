@@ -77,7 +77,7 @@ if (window.CMS) {
       },
       logo
         ? h("img", {
-            src: logo,
+            src: `static/${logo}`,
             alt: `Logo ${title || ""}`.trim(),
             style: {
               maxWidth: "160px",

@@ -19,4 +19,5 @@ template = "page.html"
 
 ## Modalités
 
-Inscription sur place ou via le formulaire de la [FFTT](https://carte.fftt.com/club/11110033).
+- Inscription au club ou via le formulaire de la [FFTT](https://carte.fftt.com/club/11110033)
+- ⚠️ Le réglement doit forcément avoir lieu directement au club !

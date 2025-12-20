@@ -84,6 +84,18 @@ collections:
               widget: "markdown",
               required: true,
             }
+      - label: "Equipes"
+        name: "equipes"
+        file: "source/content/le-club/equipes.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
       - label: "Contact"
         name: "contact"
         file: "source/content/contact.md"
