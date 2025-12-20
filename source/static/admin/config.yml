@@ -34,18 +34,17 @@ collections:
       - { label: "Titre", name: "title", widget: "string", required: true }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime", required: true }
-      - {
-          label: "Image",
-          name: "extra.image",
-          widget: "image",
-          required: false,
-        }
-      - {
-          label: "Description de l'image",
-          name: "extra.image_description",
-          widget: "string",
-          required: false,
-        }
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - {
+              label: "Description de l'image",
+              name: "image_description",
+              widget: "string",
+              required: false,
+            }
       - { label: "Contenu", name: "body", widget: "markdown", required: true }
 
   # Pages modifiables
@@ -137,11 +136,20 @@ collections:
     fields:
       - { label: "Nom", name: "title", widget: "string", required: true }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Logo", name: "extra.image", widget: "image", required: false }
-      - {
-          label: "Site web",
-          name: "extra.site",
-          widget: "string",
-          required: false,
-        }
+      - label: "Extra"
+        name: "extra"
+        widget: "object"
+        fields:
+          - {
+              label: "Logo",
+              name: "extra.image",
+              widget: "image",
+              required: false,
+            }
+          - {
+              label: "Site web",
+              name: "extra.site",
+              widget: "string",
+              required: false,
+            }
       - { label: "Contenu", name: "body", widget: "markdown", required: true }
