@@ -1,6 +1,6 @@
 +++
 title = "Les licenciés & Les équipes"
-description = "les différentes équipes engagées actuellement en compétition"
+description = "Les différentes équipes actuellement engagées en compétition"
 template = "page.html"
 +++
 
