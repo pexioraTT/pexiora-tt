@@ -53,7 +53,7 @@ if (window.CMS) {
         extraImage
           ? h("img", {
               alt: extraImageDescription || "",
-              src: `/${extraImage}`,
+              src: extraImage.startsWith("/") ? extraImage : `/${extraImage}`,
               style: { maxWidth: "100%", marginBottom: "1rem" },
             })
           : null,
@@ -87,7 +87,7 @@ if (window.CMS) {
       },
       logo
         ? h("img", {
-            src: `/${logo}`,
+            src: logo && logo.startsWith("/") ? logo : `/${logo}`,
             alt: `Logo ${title || ""}`.trim(),
             style: {
               maxWidth: "160px",
