@@ -3,8 +3,9 @@ title = "Un tournoi pour Octobre Rose !"
 description = "Pexiora Tennis de Table organise un tournoi pour aider dans la lutte contre le cancer du sein"
 template = "page.html"
 date = 2025-10-30
-extra.image = "/images/uploads/octobre-rose-salle.jpg"
-extra.image_description = "Les participants en plein match"
+[extra]
+image = "/images/uploads/octobre-rose-salle.jpg"
+image_description = "Les participants en plein match"
 +++
 
 Pour l'organisation de son premier Tournoi afin de contribuer à Octobre rose, le club a reçus 48 joueurs venant des différents clubs du département (Limoux, Trèbes, Caves, Narbonne, Carcassonne et même Revel !), avec un démarrage initial à 18h30.

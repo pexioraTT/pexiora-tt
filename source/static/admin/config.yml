@@ -140,15 +140,10 @@ collections:
         name: "extra"
         widget: "object"
         fields:
-          - {
-              label: "Logo",
-              name: "extra.image",
-              widget: "image",
-              required: false,
-            }
+          - { label: "Logo", name: "image", widget: "image", required: false }
           - {
               label: "Site web",
-              name: "extra.site",
+              name: "site",
               widget: "string",
               required: false,
             }

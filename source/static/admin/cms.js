@@ -13,8 +13,9 @@ if (window.CMS) {
     const data = entry.get("data");
     const title = data && data.get("title");
     const description = data && data.get("description");
-    const extraImage = data && data.get("extra.image");
-    const extraImageDescription = data && data.get("extra.image_description");
+    const extraImage = data && data.getIn(["extra", "image"]);
+    const extraImageDescription =
+      data && data.getIn(["extra", "image_description"]);
 
     return h(
       "div",
