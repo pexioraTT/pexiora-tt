@@ -67,14 +67,14 @@ Zola utilise le moteur de template **Tera** (similaire à Jinja2). Syntaxe princ
 Les fichiers Markdown utilisent le front matter TOML :
 
 ```toml
-+++
-title = "Titre de la page"
-description = "Description pour le SEO"
-date = 2024-01-01
-[extra]
-image = "images/uploads/devoc.png"
-site = "https://www.dev-oc.fr/"
-+++
+---
+title: "Titre de la page"
+description: "Description pour le SEO"
+date: 2024-01-01
+extra:
+    image: "images/uploads/devoc.png"
+    site: "https://www.dev-oc.fr/"
+---
 ```
 
 ### Alpine.js

@@ -1,8 +1,8 @@
-+++
-title = "Contact"
-description = "Contactez-nous"
-template = "page.html"
-+++
+---
+title: "Contact"
+description: "Contactez-nous"
+template: "page.html"
+---
 
 ## Coordonnées
 

@@ -1,8 +1,8 @@
-+++
-title = "Le Staff"
-description = "L'équipe encadrante du club."
-template = "page.html"
-+++
+---
+title: "Le Staff"
+description: "L'équipe encadrante du club."
+template: "page.html"
+---
 
 | Photo                                         | Nom            | Rôle       |
 | --------------------------------------------- | -------------- | ---------- |

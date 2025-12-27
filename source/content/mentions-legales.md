@@ -1,8 +1,8 @@
-+++
-title = "Mentions légales"
-description = "Informations légales du site Pexiora TT."
-template = "page.html"
-+++
+---
+title: "Mentions légales"
+description: "Informations légales du site Pexiora TT."
+template: "page.html"
+---
 
 **Éditeur du site** :
 Association Pexiora Tennis de Table

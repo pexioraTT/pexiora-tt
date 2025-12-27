@@ -1,20 +1,18 @@
-+++
-title = "Adhésions"
-description = "Tarifs et modalités d'inscription au club."
-template = "page.html"
-+++
+---
+title: "Adhésions"
+description: "Tarifs et modalités d'inscription au club."
+template: "page.html"
+---
 
-## Tarifs
-
-### Loisir
+## Tarifs Loisir
 
 - Adulte : 52 € / an
 - Jeune (-18 ans) : 52 € / an
 
-### Compétition
+## Tarifs Compétition
 
 - Adulte : 92 € / an
-- Jeune (-18 ans) : 92 € / an
+- Jeune (-18 ans) : 72 € / an
 - Critérium fédéral : 40 €
 
 ## Modalités

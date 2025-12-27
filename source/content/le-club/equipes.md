@@ -1,26 +1,24 @@
-+++
-title = "Les licenciés & Les équipes"
-description = "Les différentes équipes actuellement engagées en compétition"
-template = "page.html"
-+++
+---
+title: "Les Licenciés & Les équipes"
+description: "Les différentes équipes actuellement engagées en compétition"
+template: "page.html"
+---
 
 Le club compte actuellement une cinquantaine de licenciés, dont 15 jeunes.
 6 équipes évoluent dans la [ligue Occitanie](https://loctt.fr/), 1 en régional et 5 en départemental (Aude).
 
-## Les Équipes
+## Les Équipes en Régional
 
-### Régional
+| Équipe    | Championnat | Capitaine     |
+| --------- | ----------- | ------------- |
+| Pexiora 1 | Régional 4  | Julien Dubois |
 
-| Équipe    | Championnat | Capitaine     | Photo                                |
-| --------- | ----------- | ------------- | ------------------------------------ |
-| Pexiora 1 | Régional 4  | Julien Dubois | ![Pex1](/images/uploads/players.png) |
+## Les Équipes en Départemental
 
-### Départemental
-
-| Équipe    | Championnat   | Capitaine       | Photo                                |
-| --------- | ------------- | --------------- | ------------------------------------ |
-| Pexiora 2 | Département 1 | Christophe Ruiz | ![Pex2](/images/uploads/players.png) |
-| Pexiora 3 | Département 1 | David Delpech   | ![Pex3](/images/uploads/players.png) |
-| Pexiora 4 | Département 2 | Frantz Ballais  | ![Pex4](/images/uploads/players.png) |
-| Pexiora 5 | Département 3 |                 | ![Pex5](/images/uploads/players.png) |
-| Pexiora 6 | Département 3 |                 | ![Pex6](/images/uploads/players.png) |
+| Équipe    | Championnat     | Capitaine       |
+| --------- | --------------- | --------------- |
+| Pexiora 2 | Départemental 1 | Christophe Ruiz |
+| Pexiora 3 | Départemental 1 | David Delpech   |
+| Pexiora 4 | Départemental 2 | Frantz Ballais  |
+| Pexiora 5 | Départemental 3 |                 |
+| Pexiora 6 | Départemental 3 |                 |

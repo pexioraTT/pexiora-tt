@@ -1,8 +1,8 @@
-+++
-title = "Horaires & Entraînements"
-description = "Créneaux et lieux d'entraînement du club."
-template = "page.html"
-+++
+---
+title: "Horaires & Entraînements"
+description: "Créneaux et lieux d'entraînement du club."
+template: "page.html"
+---
 
 ## Saison 2025-2026
 

@@ -1,8 +1,8 @@
-+++
-title = "Accueil"
-description = "Site web du club de tennis de table de Pexiora"
-template = "index.html"
-+++
+---
+title: "Accueil"
+description: "Site web du club de tennis de table de Pexiora"
+template: "index.html"
+---
 
 ## Votre contenu ici
 

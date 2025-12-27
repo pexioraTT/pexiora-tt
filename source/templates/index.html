@@ -88,7 +88,7 @@
         <h2 class="title is-4 has-text-primary">{{ sponsors.title }}</h2>
         <div class="content">
             <ul style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; list-style: none; padding: 0; margin: 2rem 0;">
-                {% for sponsor in sponsors.pages %}
+                {% for sponsor in sponsors.pages | sort(attribute='title') %}
                     <li style="background: var(--color-accent-light); color: var(--color-primary-dark); border-radius: 2rem; padding: 0.75rem 2rem; font-weight: 600; box-shadow: 0 2px 8px rgba(232,180,0,0.08); white-space: nowrap; display: flex; align-items: center; gap: 1rem;">
                         {% if sponsor.extra.site %}
                             <a href="{{ sponsor.extra.site }}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 1rem;">
@@ -98,7 +98,7 @@
                             {% if sponsor.extra.image %}
                                 <img src="{{ get_url(path=sponsor.extra.image) }}" alt="Logo {{ sponsor.title }}" style="height: 2.5rem; width: auto; border-radius: 0.5rem; background: #fff; box-shadow: 0 1px 4px #0001;">
                             {% endif %}
-                            <span>{{ sponsor.title }}</span>
+                            <span style="word-break: break-word; overflow-wrap: break-word; max-width: 100%; white-space: normal;">{{ sponsor.title }}</span>
                         {% if sponsor.extra.site %}
                             </a>
                         {% else %}

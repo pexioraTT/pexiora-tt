@@ -12,14 +12,14 @@
     <meta property="og:url" content="{% block og_url %}{% endblock og_url %}">
     <meta property="og:title" content="{% block og_title %}{% endblock og_title %} - {{ config.title }}">
     <meta property="og:description" content="{% block og_description %}{% endblock og_description %}">
-    <meta property="og:image" content="{% block og_image %}{{ get_url(path='logo.svg') }}{% endblock og_image %}">
+    <meta property="og:image" content="{% block og_image %}{{ get_url(path='logo-og-image.png') }}{% endblock og_image %}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{% block twitter_url %}{% endblock twitter_url %}">
     <meta property="twitter:title" content="{% block twitter_title %}{% endblock twitter_title %}">
     <meta property="twitter:description" content="{% block twitter_description %}{% endblock twitter_description %}">
-    <meta property="twitter:image" content="{% block twitter_image %}{{ get_url(path='logo.svg') }}{% endblock twitter_image %}">
+    <meta property="twitter:image" content="{% block twitter_image %}{{ get_url(path='logo-og-image.png') }}{% endblock twitter_image %}">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -82,21 +82,39 @@
                 </a>
             </div>
 
+            {% set accueil = get_section(path="_index.md") %}
+            {% set actualites = get_section(path="actualites/_index.md") %}
+            {% set sponsors = get_section(path="sponsors/_index.md") %}
+            {% set contact = get_page(path="contact.md") %}
+            {% set club = get_section(path="le-club/_index.md") %}
+
             <div class="navbar-menu" :class="{ 'is-active': isActive }">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="{{ get_url(path="/") }}">Accueil</a>
-                    <a class="navbar-item" href="{{ get_url(path="/actualites/") }}">Actualités</a>
+                    <a class="navbar-item" href="{{ get_url(path=accueil.path) }}">{{ accueil.title }}</a>
+                    {% if actualites.pages | length > 0 %}
+                        {% set last_news = actualites.pages | slice(end=3) %}
                         <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link" href="{{ get_url(path="/le-club/") }}">Le Club</a>
+                            <a class="navbar-link" href="{{ get_url(path=actualites.path) }}">{{ actualites.title }}</a>
                             <div class="navbar-dropdown">
-                                <a class="navbar-item" href="{{ get_url(path="/le-club/horaires") }}">Horaires &amp; Entraînements</a>
-                                <a class="navbar-item" href="{{ get_url(path="/le-club/adhesions") }}">Adhésions</a>
-                                <a class="navbar-item" href="{{ get_url(path="/le-club/staff") }}">Le Staff</a>
-                                <a class="navbar-item" href="{{ get_url(path="/le-club/equipes") }}">Les licenciés & Les Equipes</a>
+                                {% for page in last_news %}
+                                    <a class="navbar-item" href="{{ get_url(path=page.path) }}">{{ page.title }}</a>
+                                {% endfor %}
+                                <a class="navbar-item" href="{{ get_url(path=actualites.path) }}">> Toutes les actualités</a>
                             </div>
                         </div>
-                        <a class="navbar-item" href="{{ get_url(path="/sponsors") }}">Sponsors</a>
-                        <a class="navbar-item" href="{{ get_url(path="/contact") }}">Contact</a>
+                    {% else %}
+                        <a class="navbar-item" href="{{ get_url(path=actualites.path) }}">{{ actualites.title }}</a>
+                    {% endif %}
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="{{ get_url(path=club.path) }}">{{ club.title }}</a>
+                        <div class="navbar-dropdown">
+                            {% for page in club.pages %}
+                                <a class="navbar-item" href="{{ get_url(path=page.path) }}">{{ page.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <a class="navbar-item" href="{{ get_url(path=sponsors.path) }}">{{ sponsors.title }}</a>
+                    <a class="navbar-item" href="{{ get_url(path=contact.path) }}">{{ contact.title }}</a>
                 </div>
             </div>
         </div>
