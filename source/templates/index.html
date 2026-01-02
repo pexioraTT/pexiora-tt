@@ -15,9 +15,13 @@
 <section class="hero is-info">
     <div class="hero-body">
         <div class="container has-text-centered">
-            <img src="{{ get_url(path='logo.svg') }}" alt="Logo Pexiora TT" class="logo-hero" style="width: 100%;">
-            <h1 class="title is-1">Bienvenue</h1>
-            <h2 class="subtitle is-4">{{ config.description }}</h2>
+            <img src="{{ get_url(path='logo.svg') }}" alt="{{ config.title }}" class="logo-hero" style="width: 100%;">
+            <h1 class="title is-1">
+                Bienvenue au club<br>
+                <span class="title is-1">{{ config.extra.short_title }}</span>
+            </h1>
+
+            <h2 class="subtitle is-4">{{ section.description }}</h2>
         </div>
     </div>
 </section>

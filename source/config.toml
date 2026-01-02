@@ -1,6 +1,6 @@
 base_url = "/"
-title = "Pexiora TT"
-description = "Site web vitrine du club de tennis de table de Pexiora."
+title = "Pexiora Tennis de Table"
+description = "Site web vitrine du club de tennis de table de Pexiora, au coeur de l'Ouest Audois."
 author = "Dev'Oc"
 
 # Configuration du thème et de la langue
@@ -10,6 +10,9 @@ feed_filenames = ["feed.xml"]
 compile_sass = true
 minify_html = true
 build_search_index = true
+
+[extra]
+short_title = "Pexiora TT"
 
 # Configuration Markdown
 [markdown]

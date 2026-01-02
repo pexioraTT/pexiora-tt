@@ -65,9 +65,9 @@
     <nav class="navbar is-light" role="navigation" aria-label="main navigation" x-data="{ isActive: false }">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item has-text-weight-bold" href="{{ get_url(path="/") }}">
-                    <img src="{{ get_url(path="logo.svg") }}" alt="Logo Pexiora TT" style="height:2.2rem; margin-right:0.5rem;">
-                    {{ config.title }}
+                <a class="navbar-item has-text-weight-bold" title="{{ config.title }}" href="{{ get_url(path="/") }}">
+                    <img src="{{ get_url(path="logo.svg") }}" alt="{{ config.extra.short_title }}" style="height:2.2rem; margin-right:0.5rem;">
+                    {{ config.extra.short_title }}
                 </a>
 
                 <a role="button"

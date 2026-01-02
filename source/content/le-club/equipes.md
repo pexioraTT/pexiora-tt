@@ -1,5 +1,5 @@
 ---
-title: "Les Licenciés & Les équipes"
+title: "Les Licenciés & Les Équipes"
 description: "Les différentes équipes actuellement engagées en compétition"
 template: "page.html"
 ---
