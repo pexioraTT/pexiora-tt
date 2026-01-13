@@ -5,6 +5,7 @@ template: "page.html"
 ---
 
 Le club compte actuellement une cinquantaine de licenciés, dont 15 jeunes.
+
 6 équipes évoluent dans la [ligue Occitanie](https://loctt.fr/), 1 en régional et 5 en départemental (Aude).
 
 ## Les Équipes en Régional

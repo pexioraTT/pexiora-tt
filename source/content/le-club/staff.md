@@ -3,8 +3,13 @@ title: Le Staff
 description: L'équipe encadrante du club.
 template: page.html
 ---
-| Photo                                         | Nom            | Rôle                        |
-| --------------------------------------------- | -------------- | --------------------------- |
-| ![David Delpech](/images/uploads/humain.png)  | David Delpech  | Président                   |
-| ![Patrick Bitoun](/images/uploads/humain.png) | Patrick Bitoun | Trésorier                   |
-| ![Daniel Moyat](/images/uploads/humain.png)   | Daniel Moyat   | Vice-Président & Entraineur |
+
+| Nom              | Rôle                        |
+| ---------------- | --------------------------- |
+| David Delpech    | Président                   |
+| Daniel Moyat     | Vice-Président & Entraineur |
+| Patrick Bitoun   | Trésorier                   |
+| Jean Illione     | Trésorier-Adjoint           |
+| Thierry Henninot | Secretaire                  |
+| Andres Lafon     | Membre du bureau            |
+| Sandrine Delpech | Membre du bureau            |

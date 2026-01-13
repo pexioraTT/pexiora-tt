@@ -8,6 +8,7 @@ extra:
   image: /images/uploads/octobre-rose-salle.jpg
   image_description: Les participants en plein match
 ---
+
 Pour l'organisation de son premier Tournoi afin de contribuer à Octobre rose, le club a reçu 48 joueurs venant des différents clubs du département (Limoux, Trèbes, Caves, Narbonne, Carcassonne et même Revel !), avec un démarrage initial à 18h30.
 
 À cette occasion, les 48 joueurs se sont affrontés, tout d'abord en phase de poule (12 poules de 4), puis répartis sur deux tableaux de 24 joueurs chacun.
