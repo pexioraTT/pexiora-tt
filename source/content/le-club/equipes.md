@@ -16,10 +16,10 @@ Le club compte actuellement une cinquantaine de licenciés, dont 15 jeunes.
 
 ## Les Équipes en Départemental
 
-| Équipe    | Championnat     | Capitaine       |
-| --------- | --------------- | --------------- |
-| Pexiora 2 | Départemental 1 | Christophe Ruiz |
-| Pexiora 3 | Départemental 1 | David Delpech   |
-| Pexiora 4 | Départemental 2 | Frantz Ballais  |
-| Pexiora 5 | Départemental 3 |                 |
-| Pexiora 6 | Départemental 3 |                 |
+| Équipe    | Championnat     | Capitaine        |
+| --------- | --------------- | ---------------- |
+| Pexiora 2 | Départemental 1 | Christophe Ruiz  |
+| Pexiora 3 | Départemental 1 | David Delpech    |
+| Pexiora 4 | Départemental 2 | Frantz Ballais   |
+| Pexiora 5 | Départemental 3 | Clément Dubos    |
+| Pexiora 6 | Départemental 3 | Adelino Da Silva |

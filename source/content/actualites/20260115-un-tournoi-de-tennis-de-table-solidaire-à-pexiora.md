@@ -19,7 +19,9 @@ Que vous soyez joueur confirmé, pratiquant loisir désireux de passer une bonne
 Les inscriptions sont ouvertes à tous, dans la limite de 48 participants, afin de garantir un déroulement fluide et agréable de la compétition.
 
 ## Une participation solidaire
-La particularité de ce tournoi réside dans son mode de participation : l’inscription se fait exclusivement par des dons de nourriture, qui seront ensuite remis aux Restos du Cœur. Une belle manière d’allier sport, partage et engagement citoyen.
+
+La particularité de ce tournoi réside dans son mode de participation : l'inscription se fait exclusivement par des dons de nourriture, qui seront ensuite remis aux Restos du Cœur. Une belle manière d’allier sport, partage et engagement citoyen.
 
 ## Sport, convivialité et engagement
+
 Au-delà de la compétition, cette soirée se veut avant tout un moment de convivialité, de rencontres et de solidarité, fidèle aux valeurs du monde associatif et du tennis de table.Nous vous attendons nombreux pour faire de ce tournoi un véritable succès, tant sur le plan sportif que solidaire.
