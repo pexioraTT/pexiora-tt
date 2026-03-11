@@ -5,7 +5,7 @@ command = "zola build --base-url $URL"
 publish = "public"
 
 [build.environment]
-ZOLA_VERSION = "0.21.0"
+ZOLA_VERSION = "0.22.1"
 
 # Bloc pour le développement local
 [dev]

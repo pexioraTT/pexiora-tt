@@ -106,6 +106,30 @@ collections:
               widget: "markdown",
               required: true,
             }
+      - label: "Palmares"
+        name: "palmares"
+        file: "source/content/le-club/palmares.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
+      - label: "Histoire"
+        name: "histoire"
+        file: "source/content/le-club/histoire.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
       - label: "Contact"
         name: "contact"
         file: "source/content/contact.md"
