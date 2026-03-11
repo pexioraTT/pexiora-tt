@@ -1,7 +1,7 @@
 ---
-title: "Horaires & Entraînements"
-description: "Créneaux et lieux d'entraînement du club."
-template: "page.html"
+title: Horaires & Entraînements
+description: Créneaux et lieux d'entraînement du club.
+template: page.html
 ---
 
 ## Saison 2025-2026
@@ -36,3 +36,8 @@ Pendant les vacances scolaires :
 - Mardi : **18h00 - 21h00** (Salle Polyvalente)
 - Mercredi : **18h00 - 21h00** (Salle Polyvalente)
 - Jeudi : **18h00 - 21h00** (Salle Polyvalente)
+
+-> Possibilité d'entrainement supplémentaire sur demande pour les licenciés (Hors vacances scolaire) :
+- Lundi : **14h00 - 23h59** (Salle de Besplas)
+- Mercredi : **19h00 - 23h59** (Salle de Besplas)
+- Vendredi : **14h - 23h59** (Salle de Besplas)
