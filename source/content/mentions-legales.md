@@ -16,18 +16,17 @@ Le présent site est édité par :
 
 **PEXIORA TENNIS DE TABLE**  
 Association déclarée régie par la loi du 1er juillet 1901  
-Siège social : **Mairie, place de la Mairie, 11150 Pexiora**  
+Siège social : **Mairie, place de la Mairie, 11150 Pexiora**
+Lieu de pratique : **Salle Polyvalente, 407 Rue du Stade, 11150 Pexiora**
 SIREN : **904 151 917**  
 SIRET (siège) : **904 151 917 00013**  
 RNA : **W111008575**  
-Téléphone : **XX XX XX XX XX**  
+Téléphone : **[à compléter]** 
 Adresse e-mail : **pexioratennisdetable@gmail.com**
 
 ## 2. Directeur de la publication
 
-Le directeur de la publication est :
-
-**David Delpech**
+Le directeur de la publication est : **David Delpech**
 
 Pour toute question relative au site, vous pouvez écrire à : **pexioratennisdetable@gmail.com**
 
@@ -40,7 +39,7 @@ Le site est hébergé par :
 San Francisco, CA 94105  
 États-Unis  
 Adresse e-mail : **support@netlify.com**  
-Téléphone : **[à compléter]**
+Téléphone : **+1 415-691-1573**
 
 ## 4. Conception et réalisation
 
@@ -76,7 +75,7 @@ Le responsable du traitement est :
 **PEXIORA TENNIS DE TABLE**  
 Mairie, place de la Mairie, 11150 Pexiora  
 E-mail : **pexioratennisdetable@gmail.com**  
-Téléphone : **XX XX XX XX XX**
+Téléphone : **[à compléter]**
 
 ### Finalités du traitement
 
