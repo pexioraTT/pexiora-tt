@@ -17,11 +17,11 @@ Le présent site est édité par :
 **PEXIORA TENNIS DE TABLE**  
 Association déclarée régie par la loi du 1er juillet 1901  
 Siège social : **Mairie, place de la Mairie, 11150 Pexiora**
-Lieu de pratique : **Salle Polyvalente, 407 Rue du Stade, 11150 Pexiora**
+Lieu de pratique : **Salle Polyvalente, 407 Rue du Stade, 11150 Pexiora**  
 SIREN : **904 151 917**  
 SIRET (siège) : **904 151 917 00013**  
 RNA : **W111008575**  
-Téléphone : **[à compléter]** 
+Téléphone : **[à compléter]**   
 Adresse e-mail : **pexioratennisdetable@gmail.com**
 
 ## 2. Directeur de la publication
