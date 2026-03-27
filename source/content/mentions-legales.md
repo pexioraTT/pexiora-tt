@@ -21,7 +21,7 @@ Lieu de pratique : **Salle Polyvalente, 407 Rue du Stade, 11150 Pexiora**
 SIREN : **904 151 917**  
 SIRET (siège) : **904 151 917 00013**  
 RNA : **W111008575**  
-Téléphone : **[à compléter]**   
+Téléphone : **+33 6 50 21 71 91**   
 Adresse e-mail : **pexioratennisdetable@gmail.com**
 
 ## 2. Directeur de la publication
@@ -75,7 +75,7 @@ Le responsable du traitement est :
 **PEXIORA TENNIS DE TABLE**  
 Mairie, 02 place de la Mairie, 11150 Pexiora  
 E-mail : **pexioratennisdetable@gmail.com**  
-Téléphone : **[à compléter]**
+Téléphone : **+33 6 50 21 71 91**  
 
 ### Finalités du traitement
 
