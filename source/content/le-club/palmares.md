@@ -6,6 +6,11 @@ date: 2026-03-11
 
 # Saison 2025 - 2026
 
+## Finale par Classement
+
+- 🥉 - Catégorie <900
+- 🥈 - Catégorie <600
+
 ## Championnat Vétéran par Equipe
 
 - 🥇 - Catégorie Vétérans 1 - Départemental
