@@ -220,7 +220,7 @@ description: "Résultats disponibles et commentaires sportifs des équipes du Pe
 </style>
 <div class="ptt-page">
 
-<section class="ptt-hero">
+<section class="">
   <h1>Résultats des équipes du Pexiora TT</h1>
   <p><strong>Saison 2025-2026</strong> — Suivi des résultats disponibles pour les équipes engagées du Pexiora Tennis de Table.</p>
   <p>6 équipes - Phase 1 + Phase 2 - Mise à jour : 29 mai 2026
