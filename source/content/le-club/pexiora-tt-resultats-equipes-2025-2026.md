@@ -362,7 +362,7 @@ Le club a terminé cette première partie de saison avec une montée générale,
 La phase 2 change la nature du défi. Pexiora 1 découvre la Régionale 4, Pexiora 2 et Pexiora 3 montent en Départementale 1, Pexiora 4 bascule en Départementale 2, tandis que Pexiora 5 et Pexiora 6 lancent leur aventure en Départementale 3.
 </p>
 
-<h3>Journée 1 — Publication du 11 février 2026</h3>
+<h3>Journée 1 — Publication du 07 février 2026</h3>
 
 <div class="ptt-table-wrap">
 <table class="ptt-table">
@@ -384,19 +384,19 @@ La phase 2 change la nature du défi. Pexiora 1 découvre la Régionale 4, Pexio
     <tr>
       <td>Pexiora 2</td>
       <td>Pexiora 3</td>
-      <td><span class="ptt-result ptt-win">Victoire — score NC</span></td>
+      <td><span class="ptt-result ptt-win">Victoire 14-0</span></td>
       <td class="ptt-comment">Duel interne dès l’ouverture. Pexiora 2 confirme son ascendant, mais l’absence de score public interdit d’en tirer une lecture trop fine.</td>
     </tr>
     <tr>
       <td>Pexiora 3</td>
       <td>Pexiora 2</td>
-      <td><span class="ptt-result ptt-loss">Défaite — score NC</span></td>
+      <td><span class="ptt-result ptt-loss">Défaite 0-14</span></td>
       <td class="ptt-comment">Début difficile, mais logique face à une équipe 2 déjà très solide. Le vrai test sera la capacité à prendre des points hors derby.</td>
     </tr>
     <tr>
       <td>Pexiora 4</td>
       <td>Raquettes des Martys</td>
-      <td><span class="ptt-result ptt-loss">Défaite — score NC</span></td>
+      <td><span class="ptt-result ptt-loss">Défaite — 1-13</span></td>
       <td class="ptt-comment">Entrée en D2 compliquée. La montée impose tout de suite plus de rigueur, surtout sur les matchs intermédiaires.</td>
     </tr>
     <tr>
@@ -415,7 +415,7 @@ La phase 2 change la nature du défi. Pexiora 1 découvre la Régionale 4, Pexio
 </table>
 </div>
 
-<h3>Journée 2 — Publication du 11 mars 2026</h3>
+<h3>Journée 2 — Publication du 07 mars 2026</h3>
 
 <div class="ptt-table-wrap">
 <table class="ptt-table">
@@ -431,7 +431,7 @@ La phase 2 change la nature du défi. Pexiora 1 découvre la Régionale 4, Pexio
     <tr>
       <td>Pexiora 1</td>
       <td>TT Critourien La Tour-du-Crieu</td>
-      <td><span class="ptt-result ptt-draw">Match nul — score NC</span></td>
+      <td><span class="ptt-result ptt-draw">Match nul 7-7</span></td>
       <td class="ptt-comment">Le premier vrai signal d’alerte positif : l’équipe ne gagne pas, mais elle ne rompt pas. En régionale, savoir ramener un nul compte.</td>
     </tr>
     <tr>
@@ -455,7 +455,7 @@ La phase 2 change la nature du défi. Pexiora 1 découvre la Régionale 4, Pexio
     <tr>
       <td>Pexiora 5</td>
       <td>Limoux</td>
-      <td><span class="ptt-result ptt-draw">Match nul — score NC</span></td>
+      <td><span class="ptt-result ptt-draw">Match nul 7-7</span></td>
       <td class="ptt-comment">Un nul qui entretient la dynamique. Pour une équipe récente, prendre des points régulièrement est déjà un excellent indicateur.</td>
     </tr>
     <tr>
@@ -467,14 +467,14 @@ La phase 2 change la nature du défi. Pexiora 1 découvre la Régionale 4, Pexio
     <tr>
       <td>Pexiora 6</td>
       <td>Résultat non publié</td>
-      <td><span class="ptt-result ptt-nc">NC</span></td>
+      <td><span class="ptt-result ptt-win">Victoire 8-6</span></td>
       <td class="ptt-comment">Aucun résultat exploitable retrouvé dans les sources publiques consultées pour cette journée.</td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<h3>Journée 3 — Publication du 26 mars 2026</h3>
+<h3>Journée 3 — Publication du 21 mars 2026</h3>
 
 <div class="ptt-table-wrap">
 <table class="ptt-table">
