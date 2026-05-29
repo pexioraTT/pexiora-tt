@@ -453,12 +453,6 @@ La phase 2 change la nature du défi. Pexiora 1 découvre la Régionale 4, Pexio
       <td class="ptt-comment">Un nul qui entretient la dynamique. Pour une équipe récente, prendre des points régulièrement est déjà un excellent indicateur.</td>
     </tr>
     <tr>
-      <td>Pexiora 5</td>
-      <td>Sigean</td>
-      <td><span class="ptt-result ptt-win">Victoire 8-6</span></td>
-      <td class="ptt-comment">Match serré, victoire précieuse. Pexiora 5 apprend vite à gagner les rencontres qui basculent sur deux ou trois détails.</td>
-    </tr>
-    <tr>
       <td>Pexiora 6</td>
       <td>Résultat non publié</td>
       <td><span class="ptt-result ptt-win">Victoire 8-6</span></td>
