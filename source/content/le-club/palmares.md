@@ -1,6 +1,6 @@
 ---
-title: "Palmarès du club"
-description: "Tous les titres, podiums et distinctions du club, saison par saison."
+title: Palmarès du club
+description: Tous les titres, podiums et distinctions du club, saison par saison.
 date: 2026-03-11
 ---
 
@@ -18,6 +18,12 @@ date: 2026-03-11
 - 🥉 - Catégorie Vétérans 2 - Départemental
 
 ## Championnat par Equipe
+
+### Phase 2
+
+- 🥇 - Régional 4
+- 🥇 - Départemental 1
+- 🥇 - Départemental 3
 
 ### Phase 1
 
