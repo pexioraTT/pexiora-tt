@@ -152,7 +152,7 @@ bun run commit
 
 Configurez dans l'interface Netlify :
 
-- `ZOLA_VERSION=0.21.0`
+- `ZOLA_VERSION=0.23.2`
 
 ## 🔒 Authentification CMS
 

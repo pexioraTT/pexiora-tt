@@ -92,12 +92,13 @@
                 <div class="navbar-end">
                     <a class="navbar-item" href="{{ get_url(path=accueil.path) }}">{{ accueil.title }}</a>
                     {% if actualites.pages | length > 0 %}
-                        {% set last_news = actualites.pages | slice(end=3) %}
                         <div class="navbar-item has-dropdown is-hoverable">
                             <a class="navbar-link" href="{{ get_url(path=actualites.path) }}">{{ actualites.title }}</a>
                             <div class="navbar-dropdown">
-                                {% for page in last_news %}
+                                {% for page in actualites.pages %}
+                                    {% if loop.index0 < 3 %}
                                     <a class="navbar-item" href="{{ get_url(path=page.path) }}">{{ page.title }}</a>
+                                    {% endif %}
                                 {% endfor %}
                                 <a class="navbar-item" href="{{ get_url(path=actualites.path) }}">> Toutes les actualités</a>
                             </div>
