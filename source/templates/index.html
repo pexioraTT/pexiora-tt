@@ -120,7 +120,7 @@
                             <span style="display: flex; align-items: center; gap: 1rem;">
                         {% endif %}
                             {% if sponsor.extra.image %}
-                                <img src="{{ get_url(path=sponsor.extra.image) }}" alt="Logo {{ sponsor.title }}" style="height: 2.5rem; width: auto; border-radius: 0.5rem; background: #fff; box-shadow: 0 1px 4px #0001;">
+                                <span role="img" aria-label="Logo {{ sponsor.title }}" style="display: inline-block; height: 2.5rem; width: 2.5rem; border-radius: 0.5rem; background-color: #fff; background-image: url('{{ get_url(path=sponsor.extra.image) }}'); background-size: contain; background-repeat: no-repeat; background-position: center; box-shadow: 0 1px 4px #0001;"></span>
                             {% endif %}
                             <span style="word-break: break-word; overflow-wrap: break-word; max-width: 100%; white-space: normal;">{{ sponsor.title }}</span>
                         {% if sponsor.extra.site %}
