@@ -1,0 +1,9 @@
+[tools]
+# Doit correspondre à ZOLA_VERSION dans source/netlify.toml
+zola = "0.23.2"
+"pipx:rust-just" = "latest"
+"pipx:pre-commit" = "latest"
+node = "latest"
+bun = "latest"
+pnpm = "latest"
+bats = "latest"

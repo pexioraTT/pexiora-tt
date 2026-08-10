@@ -1,0 +1,21 @@
+# <type>: <sujet> (72 caractères max, à l'impératif, sans point final)
+# |----------------------------------------------------------------------| 72
+
+# Corps du message (optionnel) : le "pourquoi", pas le "quoi".
+# Lignes de 100 caractères max.
+# |------------------------------------------------------------------------------------------------| 100
+
+# Types autorisés (voir commitlint.config.js) :
+#   feat     Nouvelle fonctionnalité
+#   fix      Correction de bug
+#   docs     Documentation
+#   style    Formatage, point-virgule manquant, etc.
+#   refactor Refactoring
+#   test     Ajout de tests
+#   chore    Maintenance, mise à jour des dépendances
+#   perf     Amélioration des performances
+#   ci       Changements CI/CD
+#   build    Changements build system
+#   revert   Annulation d'un commit précédent
+#
+# Exemple : feat: ajout de la page horaires d'été
