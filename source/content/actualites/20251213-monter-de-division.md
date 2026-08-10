@@ -8,8 +8,7 @@ extra:
   image_description: "Victoire"
 ---
 
-Le club réalise une très belle performance sur cette prémière phase de saison, avec une monter de division de toute ses équipes
-présente actuellement en competition !
+Le club réalise une très belle performance sur cette prémière phase de saison, avec une monter de division de toute ses équipes présente actuellement en competition !
 
 Le club réalise une très belle performance sur cette première phase de saison, avec une montée de division de toutes ses équipes actuellement présentes en compétition !
 

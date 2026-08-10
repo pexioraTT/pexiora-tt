@@ -3,6 +3,7 @@ title: Palmarès du club
 description: Tous les titres, podiums et distinctions du club, saison par saison.
 date: 2026-03-11
 ---
+
 # Saison 2026 - 2027
 
 > Patience, ça arrive !

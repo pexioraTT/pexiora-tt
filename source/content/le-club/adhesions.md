@@ -1,6 +1,7 @@
 ---
 title: "Adhésions"
 description: "Tarifs et modalités d'inscription au club."
+date: 2025-11-18
 template: "page.html"
 ---
 

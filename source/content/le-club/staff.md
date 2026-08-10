@@ -1,6 +1,7 @@
 ---
 title: Le Staff
 description: L'équipe encadrante du club.
+date: 2025-11-18
 template: page.html
 ---
 
@@ -10,6 +11,5 @@ template: page.html
 | Daniel Moyat     | Vice-Président & Entraineur |
 | Patrick Bitoun   | Trésorier                   |
 | Jean Illione     | Trésorier-Adjoint           |
-| Thierry Henninot | Secretaire                  |
-| Andres Lafon     | Membre du bureau            |
-| Sandrine Delpech | Membre du bureau            |
+| Sandrine Delpech | Secretaire                  |
+| Clément Dubos    | Secretaire Adjoint          |

@@ -1,6 +1,7 @@
 ---
 title: "I.N.D Renove"
 description: "Toute Renovation Intérieur"
+date: 2025-12-04
 template: "page.html"
 extra:
   image: "/images/uploads/indrenove.png"

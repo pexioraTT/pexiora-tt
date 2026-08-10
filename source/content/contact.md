@@ -1,6 +1,7 @@
 ---
 title: "Contact"
 description: "Contactez-nous"
+date: 2025-11-18
 template: "page.html"
 ---
 

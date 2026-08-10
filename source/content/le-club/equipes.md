@@ -1,6 +1,7 @@
 ---
 title: "Les Licenciés & Les Équipes"
 description: "Les différentes équipes actuellement engagées en compétition"
+date: 2025-12-20
 template: "page.html"
 ---
 
