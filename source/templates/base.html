@@ -87,6 +87,7 @@
             {% set sponsors = get_section(path="sponsors/_index.md") %}
             {% set contact = get_page(path="contact.md") %}
             {% set club = get_section(path="le-club/_index.md") %}
+            {% set resultats = get_section(path="resultats/_index.md") %}
 
             <div class="navbar-menu" :class="{ 'is-active': isActive }">
                 <div class="navbar-end">
@@ -114,6 +115,7 @@
                             {% endfor %}
                         </div>
                     </div>
+                    <a class="navbar-item" href="{{ get_url(path=resultats.path) }}">{{ resultats.title }}</a>
                     <a class="navbar-item" href="{{ get_url(path=sponsors.path) }}">{{ sponsors.title }}</a>
                     <a class="navbar-item" href="{{ get_url(path=contact.path) }}">{{ contact.title }}</a>
                 </div>

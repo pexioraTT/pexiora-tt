@@ -162,6 +162,22 @@ collections:
               widget: "markdown",
               required: true,
             }
+      - label: "Championnat en cours"
+        name: "resultats-en-cours"
+        file: "source/content/resultats/en-cours.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string", required: true }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Date", name: "date", widget: "datetime", required: true }
+          - {
+              label: "Contenu",
+              name: "body",
+              widget: "markdown",
+              required: true,
+            }
+      # Note : les saisons archivées (source/content/resultats/archive/) ne
+      # sont volontairement pas exposées ici. Elles ne se modifient que par
+      # git, pas par le CMS.
 
   # Sponsors
   - name: "sponsors"

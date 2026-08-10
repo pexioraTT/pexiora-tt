@@ -369,6 +369,11 @@ table tr:last-child td {
   margin-top: 25px;
 }
 
+.achievements-box {
+  border-color: var(--color-primary);
+  border-style: solid;
+}
+
 .achievements-link {
   text-decoration: none;
   color: var(--color-text);
