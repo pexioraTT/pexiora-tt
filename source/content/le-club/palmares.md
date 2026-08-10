@@ -3,8 +3,18 @@ title: Palmarès du club
 description: Tous les titres, podiums et distinctions du club, saison par saison.
 date: 2026-03-11
 ---
+# Saison 2026 - 2027
+
+> Patience, ça arrive !
 
 # Saison 2025 - 2026
+
+## Coupe de l'Aude
+
+- 🥈 - Catégorie <800
+- 🥈 - Catégorie -19 ans
+- 🥉 - Catégorie -19 ans
+- 🥉 - Féminine
 
 ## Finale par Classement
 
