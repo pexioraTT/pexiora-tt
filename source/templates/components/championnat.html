@@ -1,0 +1,210 @@
+{#
+  Page « Championnat en cours », générée depuis un fichier de données
+  (voir data/championnat-en-cours.toml pour le format).
+  Usage (dans un .md) : {{ <championnat fichier="data/championnat-en-cours.toml" /> }}
+#}
+{% component championnat(fichier: string) -%}
+{%- set data = load_data(path=fichier) -%}
+{%- set bareme = data.points -%}
+
+{#- ===== Calcul des classements (999 = écart sans objet) ===== -#}
+{%- set_global derniere = 0 -%}
+{%- set_global poules = [] -%}
+{%- set_global recap = [] -%}
+{%- for poule in data.poules -%}
+  {%- for r in poule.rencontres -%}
+    {%- if (r.score | default(value="")) != "" or (r.statut | default(value="")) != "" -%}
+      {%- if r.j > derniere %}{% set_global derniere = r.j %}{% endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- set_global equipes = [] -%}
+  {%- for e in poule.classement -%}
+    {%- set_global v = e.v | default(value=0) -%}
+    {%- set_global n = e.n | default(value=0) -%}
+    {%- set_global d = e.d | default(value=0) -%}
+    {%- set_global f = e.f | default(value=0) -%}
+    {#- Ligne sans chiffres : équipe du club, calculée depuis ses rencontres -#}
+    {%- if e.v is undefined and e.n is undefined and e.d is undefined and e.f is undefined -%}
+      {%- for r in poule.rencontres -%}
+        {%- if r.dom == e.club or r.ext == e.club -%}
+          {%- set statut = r.statut | default(value="") -%}
+          {%- set score = r.score | default(value="") -%}
+          {%- set a_dom = r.dom == e.club -%}
+          {%- set_global res = "" -%}
+          {%- if statut == "forfait_dom" -%}
+            {%- set_global res = "f" if a_dom else "v" -%}
+          {%- elif statut == "forfait_ext" -%}
+            {%- set_global res = "v" if a_dom else "f" -%}
+          {%- elif statut == "" and score != "" -%}
+            {%- set s = score | split(pat="-") -%}
+            {%- set sd = s[0] | trim | int -%}
+            {%- set se = s[1] | trim | int -%}
+            {%- if sd == se -%}{%- set_global res = "n" -%}
+            {%- elif (sd > se) == a_dom -%}{%- set_global res = "v" -%}
+            {%- else -%}{%- set_global res = "d" -%}
+            {%- endif -%}
+          {%- endif -%}
+          {%- if res == "v" %}{% set_global v = v + 1 %}
+          {%- elif res == "n" %}{% set_global n = n + 1 %}
+          {%- elif res == "d" %}{% set_global d = d + 1 %}
+          {%- elif res == "f" %}{% set_global f = f + 1 %}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- set pts = v * bareme.v + n * bareme.n + d * bareme.d + f * bareme.f -%}
+    {%- set_global equipes = [...equipes, {
+      "club": e.club, "pts": pts, "j": v + n + d + f,
+      "v": v, "n": n, "d": d, "f": f, "tri": 0 - pts,
+      "pexiora": e.club is starting_with(pat="PEXIORA")
+    }] -%}
+  {%- endfor -%}
+
+  {#- Tri stable : à égalité de points, l'ordre du fichier est conservé -#}
+  {%- set tries = equipes | sort(attribute="tri") -%}
+  {%- set nb = tries | length -%}
+  {%- set limite = nb - poule.descentes -%}
+  {%- set_global lignes = [] -%}
+  {%- for e in tries -%}
+    {%- set i = loop.index0 -%}
+    {%- set montee = i < poule.montees -%}
+    {%- set descente = poule.descentes > 0 and i >= limite -%}
+    {%- set_global ecart_montee = 999 -%}
+    {%- if poule.montees > 0 and poule.montees < nb -%}
+      {%- set_global ecart_montee = e.pts - (tries[poule.montees].pts if montee else tries[poule.montees - 1].pts) -%}
+    {%- endif -%}
+    {%- set_global ecart_maintien = 999 -%}
+    {%- if poule.descentes > 0 and limite > 0 -%}
+      {%- set_global ecart_maintien = e.pts - (tries[limite - 1].pts if descente else tries[limite].pts) -%}
+    {%- endif -%}
+    {%- if montee -%}{%- set_global tendance = "montee" -%}
+    {%- elif descente -%}{%- set_global tendance = "descente" -%}
+    {%- elif ecart_maintien != 999 and ecart_maintien <= data.seuil_alerte -%}{%- set_global tendance = "alerte" -%}
+    {%- else -%}{%- set_global tendance = "neutre" -%}
+    {%- endif -%}
+    {%- set ligne = {...e, "rang": i + 1, "ecart_montee": ecart_montee, "ecart_maintien": ecart_maintien, "tendance": tendance} -%}
+    {%- set_global lignes = [...lignes, ligne] -%}
+    {%- if e.pexiora -%}
+      {%- set_global recap = [...recap, {...ligne, "num": e.club | replace(from="PEXIORA ", to="") | int, "division": poule.division, "nb": nb}] -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- set_global poules = [...poules, {"division": poule.division, "lignes": lignes, "montees": poule.montees, "limite": limite if poule.descentes > 0 else nb}] -%}
+{%- endfor -%}
+
+{%- set tendances = {
+  "montee": ["🟢", "Zone de montée"],
+  "neutre": ["⚪", "Milieu de tableau"],
+  "alerte": ["🟠", "Proche de la zone de relégation"],
+  "descente": ["🔴", "Zone de relégation"]
+} -%}
+
+{#- ===== Récapitulatif ===== -#}
+{%- if derniere > 0 %}
+<h2 id="classements">Classements après la J{{ derniere }}</h2>
+<div class="table-container championnat">
+<table>
+  <thead>
+    <tr><th>Équipe</th><th>Division</th><th>Rang</th><th>Pts</th><th>J</th><th>V-N-D</th><th>Montée</th><th>Maintien</th><th></th></tr>
+  </thead>
+  <tbody>
+  {%- for e in recap | sort(attribute="num") %}
+    <tr>
+      <td><strong>Pexiora {{ e.num }}</strong></td>
+      <td>{{ e.division }}</td>
+      <td>{{ e.rang }}/{{ e.nb }}</td>
+      <td>{{ e.pts }}</td>
+      <td>{{ e.j }}</td>
+      <td>{{ e.v }}-{{ e.n }}-{{ e.d }}</td>
+      {%- for ecart in [e.ecart_montee, e.ecart_maintien] %}
+      <td>{% if ecart == 999 %}–{% elif ecart > 0 %}+{{ ecart }}{% elif ecart < 0 %}−{{ 0 - ecart }}{% else %}0{% endif %}</td>
+      {%- endfor %}
+      <td><span title="{{ tendances[e.tendance][1] }}">{{ tendances[e.tendance][0] }}</span></td>
+    </tr>
+  {%- endfor %}
+  </tbody>
+</table>
+</div>
+<p class="championnat-legende">
+  Écarts en points : <strong>Montée</strong> = avance (+) ou retard (−) sur la zone de montée,
+  <strong>Maintien</strong> = avance (+) ou retard (−) sur la zone de relégation.
+  {% for cle in ["montee", "neutre", "alerte", "descente"] %}{{ tendances[cle][0] }} {{ tendances[cle][1] }}{% if not loop.last %} · {% endif %}{% endfor %}
+</p>
+
+{%- for poule in poules %}
+<details class="championnat-poule">
+  <summary>{{ poule.division }} – {{ [l.club | title for l in poule.lignes if l.pexiora] | join(sep=", ") }}</summary>
+  <div class="table-container championnat">
+  <table>
+    <thead>
+      <tr><th>Rang</th><th>Équipe</th><th>Pts</th><th>J</th><th>V</th><th>N</th><th>D</th><th>F</th></tr>
+    </thead>
+    <tbody>
+    {%- for l in poule.lignes %}
+      <tr class="{% if l.rang <= poule.montees %}zone-montee{% elif l.rang > poule.limite %}zone-descente{% endif %}{% if l.pexiora %} equipe-club{% endif %}">
+        <td>{{ l.rang }}</td>
+        <td>{{ l.club }}</td>
+        <td>{{ l.pts }}</td>
+        <td>{{ l.j }}</td>
+        <td>{{ l.v }}</td>
+        <td>{{ l.n }}</td>
+        <td>{{ l.d }}</td>
+        <td>{{ l.f }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+  </div>
+</details>
+{%- endfor %}
+{%- endif %}
+
+{#- ===== Rencontres journée par journée ===== -#}
+{%- for journee in data.journees %}
+{%- set_global matchs = [] -%}
+{%- for poule in data.poules -%}
+  {%- for r in poule.rencontres -%}
+    {%- if r.j == journee.numero -%}
+      {%- set num_dom = r.dom | replace(from="PEXIORA ", to="") | int if r.dom is starting_with(pat="PEXIORA") else 99 -%}
+      {%- set num_ext = r.ext | replace(from="PEXIORA ", to="") | int if r.ext is starting_with(pat="PEXIORA") else 99 -%}
+      {%- set_global matchs = [...matchs, {...r, "num": num_dom if num_dom < num_ext else num_ext, "regional": poule.niveau == "regional"}] -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor %}
+<h2 id="j{{ journee.numero }}">J{{ journee.numero }}: {{ journee.dates }}</h2>
+{%- for groupe in [[m for m in matchs if m.regional], [m for m in matchs if not m.regional]] %}
+{%- if groupe | length > 0 %}
+{%- if not loop.first and matchs | length > groupe | length %}
+<hr>
+{%- endif %}
+<ul>
+{%- for m in groupe | sort(attribute="num") %}
+  {%- set statut = m.statut | default(value="") -%}
+  {%- set score = m.score | default(value="") -%}
+  {%- set derby = m.dom is starting_with(pat="PEXIORA") and m.ext is starting_with(pat="PEXIORA") -%}
+  {%- set a_dom = m.dom is starting_with(pat="PEXIORA") -%}
+  <li>
+    {%- for club in [m.dom, m.ext] -%}
+      {%- if club == "EXEMPT" %}EXEMPT{% else %}<strong>{{ club }}</strong>{% endif -%}
+      {%- if loop.first %} - {% endif -%}
+    {%- endfor -%}
+    {%- if statut == "reporte" -%}
+      : (REPORTÉ)
+    {%- elif statut == "forfait_dom" or statut == "forfait_ext" -%}
+      : (FORFAIT {{ m.dom if statut == "forfait_dom" else m.ext }})
+    {%- elif score != "" -%}
+      {%- set s = score | split(pat="-") -%}
+      {%- set sd = s[0] | trim | int -%}
+      {%- set se = s[1] | trim | int -%}
+      : <strong>{{ sd }} - {{ se }}</strong>
+      {%- if not derby -%}
+        {%- if sd == se %} (ÉGALITÉ){% elif (sd > se) == a_dom %} (VICTOIRE){% else %} (DÉFAITE){% endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  </li>
+{%- endfor %}
+</ul>
+{%- endif %}
+{%- endfor %}
+{%- endfor %}
+{%- endcomponent championnat %}

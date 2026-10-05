@@ -8,4 +8,4 @@ node_modules/
 *.min.js
 
 # Ignore templates that might have conflicting syntax
-source/templates/*.html
+source/templates/**/*.html

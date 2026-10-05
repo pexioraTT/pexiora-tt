@@ -400,6 +400,37 @@ table tr:last-child td {
   text-transform: uppercase;
 }
 
+/* ===== CHAMPIONNAT EN COURS (composant championnat) ===== */
+.page-content .championnat {
+  overflow-x: auto;
+}
+.page-content .championnat table {
+  margin: 1rem auto;
+}
+.page-content .championnat tr.zone-montee td {
+  background: rgba(72, 199, 116, 0.18);
+}
+.page-content .championnat tr.zone-descente td {
+  background: rgba(241, 70, 104, 0.18);
+}
+.page-content .championnat tr.equipe-club td {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.championnat-legende {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+.championnat-poule {
+  margin: 0.5rem 0;
+}
+.championnat-poule summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding: 0.5rem 0;
+}
+
 /* ===== DARK MODE / LIGHT MODE ===== */
 @media (prefers-color-scheme: dark) {
   :root {

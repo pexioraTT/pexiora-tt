@@ -1,0 +1,208 @@
+# Championnat en cours : source unique de la page /resultats/en-cours/
+#
+# - `rencontres` : uniquement les rencontres de Pexiora. Le score s'écrit
+#   "domicile-extérieur" (ex: "4-10"). Sans score, la rencontre est « à venir ».
+#   statut possible : "reporte", "forfait_dom", "forfait_ext".
+# - `classement` : V/N/D(/F) des autres clubs, recopiés depuis la FFTT.
+#   Les lignes Pexiora ne contiennent que le nom : tout est calculé depuis
+#   les rencontres. L'ordre est libre, le tri se fait sur les points ;
+#   en cas d'égalité, l'ordre du fichier sert de départage.
+
+saison = "2026-2027"
+phase = 1
+
+# Écart (en points) avec la zone de relégation en dessous duquel on alerte
+seuil_alerte = 2
+
+# Barème FFTT des points par rencontre
+[points]
+v = 3
+n = 2
+d = 1
+f = 0
+
+[[journees]]
+numero = 1
+dates = "19 & 20 Septembre 2026"
+
+[[journees]]
+numero = 2
+dates = "3 & 4 Octobre 2026"
+
+[[journees]]
+numero = 3
+dates = "17 & 18 Octobre 2026"
+
+[[journees]]
+numero = 4
+dates = "7 & 8 Novembre 2026"
+
+[[journees]]
+numero = 5
+dates = "21 & 22 Novembre 2026"
+
+[[journees]]
+numero = 6
+dates = "5 & 6 Décembre 2026"
+
+[[journees]]
+numero = 7
+dates = "12 & 13 Décembre 2026"
+
+# ---------------------------------------------------------------------------
+
+[[poules]]
+division = "Régional 3"
+niveau = "regional"
+montees = 2
+descentes = 1
+rencontres = [
+  { j = 1, dom = "CHEMINOT MTP TT 1", ext = "PEXIORA 1", score = "4-10" },
+  { j = 2, dom = "PEXIORA 1", ext = "THUIR TT 2", statut = "reporte" },
+  { j = 3, dom = "ARGELES TT 1", ext = "PEXIORA 1" },
+  { j = 4, dom = "PEXIORA 1", ext = "TREBES TT 2" },
+  { j = 5, dom = "RIVESALTES CTT 1", ext = "PEXIORA 1" },
+  { j = 6, dom = "PEXIORA 1", ext = "MONTPELLIER TT 6" },
+  { j = 7, dom = "CANOHES TTT 2", ext = "PEXIORA 1" },
+]
+classement = [
+  { club = "PEXIORA 1" },
+  { club = "CHEMINOT MTP TT 1", v = 1, n = 0, d = 1 },
+  { club = "THUIR TT 2", v = 0, n = 0, d = 1 },
+  { club = "ARGELES TT 1", v = 2, n = 0, d = 0 },
+  { club = "TREBES TT 2", v = 0, n = 0, d = 2 },
+  { club = "RIVESALTES CTT 1", v = 1, n = 0, d = 1 },
+  { club = "MONTPELLIER TT 6", v = 1, n = 0, d = 1 },
+  { club = "CANOHES TTT 2", v = 1, n = 0, d = 1 },
+]
+
+[[poules]]
+division = "Régional 4"
+niveau = "regional"
+montees = 2
+descentes = 1
+rencontres = [
+  { j = 1, dom = "PEXIORA 2", ext = "MARSEILLAN TT 1", score = "6-8" },
+  { j = 2, dom = "FLEP LACABAREDE 1", ext = "PEXIORA 2", score = "4-10" },
+  { j = 3, dom = "PEXIORA 2", ext = "LIMOUX TT 2" },
+  { j = 4, dom = "CANET RTT 1", ext = "PEXIORA 2" },
+  { j = 5, dom = "PEXIORA 2", ext = "ENT GRUISSAN-SALLES D'AUDE" },
+  { j = 6, dom = "CAUX TT 2", ext = "PEXIORA 2" },
+  { j = 7, dom = "PEXIORA 2", ext = "ST ORENS TT 6" },
+]
+classement = [
+  { club = "PEXIORA 2" },
+  { club = "MARSEILLAN TT 1", v = 1, n = 1, d = 0 },
+  { club = "FLEP LACABAREDE 1", v = 0, n = 0, d = 2 },
+  { club = "LIMOUX TT 2", v = 2, n = 0, d = 0 },
+  { club = "CANET RTT 1", v = 1, n = 1, d = 0 },
+  { club = "ENT GRUISSAN-SALLES D'AUDE", v = 0, n = 2, d = 0 },
+  { club = "CAUX TT 2", v = 0, n = 0, d = 2 },
+  { club = "ST ORENS TT 6", v = 0, n = 0, d = 0 },
+]
+
+[[poules]]
+division = "Départemental 2"
+niveau = "departemental"
+montees = 1
+descentes = 1
+rencontres = [
+  { j = 1, dom = "TT VILLAGE PASSION 3", ext = "PEXIORA 3", score = "7-7" },
+  { j = 2, dom = "PEXIORA 3", ext = "LEZIGNAN CORBIERES 3", score = "13-1" },
+  { j = 3, dom = "CARCASSONNE MJC 3", ext = "PEXIORA 3" },
+  { j = 4, dom = "PEXIORA 3", ext = "NARBONNE TT 5" },
+  { j = 5, dom = "RAQ. MARTYNOLES 2", ext = "PEXIORA 3" },
+  { j = 6, dom = "PEXIORA 3", ext = "MJC GRUISSAN TT 2" },
+  { j = 7, dom = "TREBES TT 5", ext = "PEXIORA 3" },
+]
+classement = [
+  { club = "PEXIORA 3" },
+  { club = "TT VILLAGE PASSION 3", v = 0, n = 1, d = 1 },
+  { club = "LEZIGNAN CORBIERES 3", v = 0, n = 0, d = 2 },
+  { club = "CARCASSONNE MJC 3", v = 1, n = 0, d = 1 },
+  { club = "NARBONNE TT 5", v = 2, n = 0, d = 0 },
+  { club = "RAQ. MARTYNOLES 2", v = 0, n = 0, d = 2 },
+  { club = "MJC GRUISSAN TT 2", v = 2, n = 0, d = 0 },
+  { club = "TREBES TT 5", v = 1, n = 0, d = 1 },
+]
+
+[[poules]]
+division = "Départemental 2"
+niveau = "departemental"
+montees = 1
+descentes = 1
+rencontres = [
+  { j = 1, dom = "TT VILLAGE PASSION 4", ext = "PEXIORA 4", score = "8-6" },
+  { j = 2, dom = "PEXIORA 4", ext = "ORBIEU LAGRASSE 1", score = "6-8" },
+  { j = 3, dom = "NARBONNE TT 6", ext = "PEXIORA 4" },
+  { j = 4, dom = "PEXIORA 4", ext = "RAQ MARTYNOLES 1" },
+  { j = 5, dom = "CAVES LEUCATE TT 2", ext = "PEXIORA 4" },
+  { j = 6, dom = "SIGEAN TT 1", ext = "PEXIORA 4" },
+  { j = 7, dom = "PEXIORA 4", ext = "TREBES TT 6" },
+]
+classement = [
+  { club = "PEXIORA 4" },
+  { club = "TT VILLAGE PASSION 4", v = 1, n = 0, d = 1 },
+  { club = "ORBIEU LAGRASSE 1", v = 1, n = 0, d = 1 },
+  { club = "NARBONNE TT 6", v = 1, n = 1, d = 0 },
+  { club = "RAQ MARTYNOLES 1", v = 1, n = 1, d = 0 },
+  { club = "CAVES LEUCATE TT 2", v = 0, n = 0, d = 2 },
+  { club = "SIGEAN TT 1", v = 2, n = 0, d = 0 },
+  { club = "TREBES TT 6", v = 1, n = 0, d = 1 },
+]
+
+# Poule commune aux équipes 5 et 7 (7 équipes, une exempte par journée)
+[[poules]]
+division = "Départemental 3"
+niveau = "departemental"
+montees = 1
+descentes = 0
+rencontres = [
+  { j = 1, dom = "PEXIORA 7", ext = "PEXIORA 5", score = "4-10" },
+  { j = 2, dom = "PEXIORA 5", ext = "TREBES TT 8", score = "8-6" },
+  { j = 2, dom = "NEVIAN TT 01 2", ext = "PEXIORA 7", score = "11-3" },
+  { j = 3, dom = "SIGEAN TT 2", ext = "PEXIORA 5" },
+  { j = 3, dom = "PEXIORA 7", ext = "EXEMPT" },
+  { j = 4, dom = "NEVIAN TT 01 2", ext = "PEXIORA 5" },
+  { j = 4, dom = "LIMOUX TT 3", ext = "PEXIORA 7" },
+  { j = 5, dom = "PEXIORA 5", ext = "EXEMPT" },
+  { j = 5, dom = "PEXIORA 7", ext = "CARCASSONNE MJC 4" },
+  { j = 6, dom = "LIMOUX TT 3", ext = "PEXIORA 5" },
+  { j = 6, dom = "PEXIORA 7", ext = "SIGEAN TT 2" },
+  { j = 7, dom = "PEXIORA 5", ext = "CARCASSONNE MJC 4" },
+  { j = 7, dom = "TREBES TT 8", ext = "PEXIORA 7" },
+]
+classement = [
+  { club = "PEXIORA 5" },
+  { club = "PEXIORA 7" },
+  { club = "TREBES TT 8", v = 0, n = 0, d = 2 },
+  { club = "SIGEAN TT 2", v = 2, n = 0, d = 0 },
+  { club = "NEVIAN TT 01 2", v = 1, n = 1, d = 0 },
+  { club = "LIMOUX TT 3", v = 0, n = 0, d = 1 },
+  { club = "CARCASSONNE MJC 4", v = 0, n = 1, d = 0 },
+]
+
+[[poules]]
+division = "Départemental 3"
+niveau = "departemental"
+montees = 1
+descentes = 0
+rencontres = [
+  { j = 1, dom = "PEXIORA 6", ext = "CARCASSONNE MJC 5", score = "12-2" },
+  { j = 2, dom = "ORBIEU LAGRASSE 2", ext = "PEXIORA 6", score = "2-12" },
+  { j = 3, dom = "PEXIORA 6", ext = "SIGEAN TT 3" },
+  { j = 4, dom = "PEXIORA 6", ext = "TREBES TT 7" },
+  { j = 5, dom = "MJC GRUISSAN TT 3", ext = "PEXIORA 6" },
+  { j = 6, dom = "PEXIORA 6", ext = "NARBONNE TT 7" },
+  { j = 7, dom = "CAVES LEUCATE TT 3", ext = "PEXIORA 6" },
+]
+classement = [
+  { club = "PEXIORA 6" },
+  { club = "CARCASSONNE MJC 5", v = 1, n = 0, d = 1 },
+  { club = "ORBIEU LAGRASSE 2", v = 0, n = 0, d = 2 },
+  { club = "SIGEAN TT 3", v = 1, n = 0, d = 1 },
+  { club = "TREBES TT 7", v = 1, n = 0, d = 1 },
+  { club = "MJC GRUISSAN TT 3", v = 0, n = 0, d = 2 },
+  { club = "NARBONNE TT 7", v = 2, n = 0, d = 0 },
+  { club = "CAVES LEUCATE TT 3", v = 1, n = 0, d = 1 },
+]
