@@ -23,20 +23,20 @@ Retrouvez les résultats des saisons précédentes dans les [archives](/resultat
 - **TT VILLAGE PASSION 3** - **PEXIORA 3**: **7 / 7** (EGALITE)
 - **TT VILLAGE PASSION 4** - **PEXIORA 4**: **8 / 6** (DEFAITE)
 - **PEXIORA 7** - **PEXIORA 5**: **4 / 10**
-- **PEXIORA 6** - **CARCASSONNE MJC 5**: **10 / 2** (VICTOIRE)
+- **PEXIORA 6** - **CARCASSONNE MJC 5**: **12 / 2** (VICTOIRE)
 
 ## J2: 3 & 4 Octobre 2026
 
-- **PEXIORA 1** - **THUIR TT 2**
-- **FLEP LACABAREDE 1** - **PEXIORA 2**
+- **PEXIORA 1** - **THUIR TT 2**: - / - (REPORTE)
+- **FLEP LACABAREDE 1** - **PEXIORA 2**: **4 - 10** (VICTOIRE)
 
 ---
 
-- **PEXIORA 3** - **LEZIGNAN CORBIERES 3**
-- **PEXIORA 4** - **ORBIEU LAGRASSE 1**
-- **PEXIORA 5** - **TREBES TT 8**
-- **ORBIEU LAGRASSE 2** - **PEXIORA 6**
-- **NEVIAN TT 01 2** - **PEXIORA 7**
+- **PEXIORA 3** - **LEZIGNAN CORBIERES 3**: **13 - 1** (VICTOIRE)
+- **PEXIORA 4** - **ORBIEU LAGRASSE 1**: **6 - 8** (DEFAITE)
+- **PEXIORA 5** - **TREBES TT 8**: **8 - 6** (VICTOIRE)
+- **ORBIEU LAGRASSE 2** - **PEXIORA 6**: **2 - 12** (VICTOIRE)
+- **NEVIAN TT 01 2** - **PEXIORA 7**: **11 - 3** (DEFAITE)
 
 ## J3: 17 & 18 Octobre 2026
 
