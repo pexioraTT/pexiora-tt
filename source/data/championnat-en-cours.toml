@@ -104,8 +104,8 @@ classement = [
 [[poules]]
 division = "Départemental 2"
 niveau = "departemental"
-montees = 1
-descentes = 1
+montees = 2
+descentes = 2
 rencontres = [
   { j = 1, dom = "TT VILLAGE PASSION 3", ext = "PEXIORA 3", score = "7-7" },
   { j = 2, dom = "PEXIORA 3", ext = "LEZIGNAN CORBIERES 3", score = "13-1" },
@@ -129,8 +129,8 @@ classement = [
 [[poules]]
 division = "Départemental 2"
 niveau = "departemental"
-montees = 1
-descentes = 1
+montees = 2
+descentes = 2
 rencontres = [
   { j = 1, dom = "TT VILLAGE PASSION 4", ext = "PEXIORA 4", score = "8-6" },
   { j = 2, dom = "PEXIORA 4", ext = "ORBIEU LAGRASSE 1", score = "6-8" },
@@ -155,7 +155,7 @@ classement = [
 [[poules]]
 division = "Départemental 3"
 niveau = "departemental"
-montees = 1
+montees = 2
 descentes = 0
 rencontres = [
   { j = 1, dom = "PEXIORA 7", ext = "PEXIORA 5", score = "4-10" },
@@ -185,7 +185,7 @@ classement = [
 [[poules]]
 division = "Départemental 3"
 niveau = "departemental"
-montees = 1
+montees = 2
 descentes = 0
 rencontres = [
   { j = 1, dom = "PEXIORA 6", ext = "CARCASSONNE MJC 5", score = "12-2" },
