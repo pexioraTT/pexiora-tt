@@ -87,3 +87,6 @@ localhost.*
 
 # Lighthouse reports
 lighthouse-report.*
+
+# Python
+__pycache__
